@@ -44,7 +44,6 @@ class MainViewController: UIViewController {
 
 private extension MainViewController {
 
-    
     func presentSplashScreen() {
         addFullScreen(splashScreenViewController)
     }

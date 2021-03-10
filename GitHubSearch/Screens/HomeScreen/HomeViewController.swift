@@ -5,7 +5,6 @@
 //  Created by Krzysztof Lema on 10/03/2021.
 //
 
-
 import UIKit
 
 class HomeViewController: UIViewController {
