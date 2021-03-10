@@ -10,8 +10,9 @@ import UIKit
 import Combine
 
 class MainViewController: UIViewController {
-            
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,9 +27,29 @@ class MainViewController: UIViewController {
     func present(_ view: ViewToPresent) {
         switch view {
         case .splashScreen:
-            print("SplashSCreen")
+            addFullScreen(viewModel.mainViewFactories.makeSplashScreenViewController())
         case .mainView:
-            print("Main view")
+            addFullScreen(viewModel.mainViewFactories.makeHomeViewControllerFactory())
         }
+    }
+    
+    private let viewModel: MainViewModel
+}
+
+private extension MainViewController {
+    func addFullScreen(_ childViewController: UIViewController) {
+        guard childViewController.parent == nil else {
+            return
+        }
+        addChild(childViewController)
+        view.addSubview(childViewController.view)
+        childViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            childViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            childViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            childViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+            childViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        childViewController.didMove(toParent: self)
     }
 }
