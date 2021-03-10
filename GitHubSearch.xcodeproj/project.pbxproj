@@ -23,6 +23,7 @@
 		95CFC08925F970D7002CE7A7 /* GitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC08825F970D7002CE7A7 /* GitRepository.swift */; };
 		95CFC09B25F97B9D002CE7A7 /* GitRepositoryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC09A25F97B9D002CE7A7 /* GitRepositoryApi.swift */; };
 		95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */; };
+		95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		95CFC08825F970D7002CE7A7 /* GitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepository.swift; sourceTree = "<group>"; };
 		95CFC09A25F97B9D002CE7A7 /* GitRepositoryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApi.swift; sourceTree = "<group>"; };
 		95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGitRepository.swift; sourceTree = "<group>"; };
+		95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		9572BC9C25F9288B00C5C8C5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */,
 				95CFC09B25F97B9D002CE7A7 /* GitRepositoryApi.swift in Sources */,
 				95CFC07625F96BE8002CE7A7 /* GitRepository+Resource.swift in Sources */,
+				95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */,
 				95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */,
 				95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */,
 				95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */,

@@ -10,7 +10,11 @@ import Combine
 
 class MockGitRepository: GitRepositoryAPI {
     
-    func getRepositorySearchResult(for text: String) -> AnyPublisher<[Domain.GitRepository], GitRepositoryAPIError> {
+    init() {}
+    
+    func getRepositorySearchResult(
+        for text: String
+    ) -> AnyPublisher<[Domain.GitRepository], GitRepositoryAPIError> {
         Future { promise in
             let repositories: [Domain.GitRepository] = [
                 Domain.GitRepository(id: 0, name: "asd", url: URL(string: ""), avatarURL: URL(string: "")),
