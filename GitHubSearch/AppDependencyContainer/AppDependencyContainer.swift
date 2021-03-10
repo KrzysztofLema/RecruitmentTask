@@ -42,7 +42,6 @@ extension AppDependencyContainer: MainViewFactory {
     }
     
     func makeMainViewModel() -> MainViewModel {
-        return MainViewModel()
+        return MainViewModel(mainViewFactories: self)
     }
 }
-
