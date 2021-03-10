@@ -14,9 +14,9 @@
 		9572BC4F25F9200500C5C8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9572BC4D25F9200500C5C8C5 /* LaunchScreen.storyboard */; };
 		9572BC5A25F9200600C5C8C5 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC5925F9200600C5C8C5 /* GitHubSearchTests.swift */; };
 		9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */; };
-		95CFC02225F93A45002CE7A7 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02125F93A45002CE7A7 /* MainScreenViewController.swift */; };
-		95CFC02725F93A7E002CE7A7 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02625F93A7E002CE7A7 /* MainScreenView.swift */; };
 		9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */; };
+		95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02125F93A45002CE7A7 /* HomeViewController.swift */; };
+		95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02625F93A7E002CE7A7 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +49,9 @@
 		9572BC5B25F9200600C5C8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9572BC6025F9200600C5C8C5 /* GitHubSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		95CFC02125F93A45002CE7A7 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
-		95CFC02625F93A7E002CE7A7 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
+		95CFC02125F93A45002CE7A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		95CFC02625F93A7E002CE7A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				9572BCA425F9294F00C5C8C5 /* DetailWebScreen */,
-				9572BCA325F9294900C5C8C5 /* MainScreen */,
+				9572BCA325F9294900C5C8C5 /* HomeScreen */,
 				9572BCA225F9294100C5C8C5 /* SplashScreen */,
 			);
 			path = Screens;
@@ -180,13 +180,13 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
-		9572BCA325F9294900C5C8C5 /* MainScreen */ = {
+		9572BCA325F9294900C5C8C5 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				95CFC02125F93A45002CE7A7 /* MainScreenViewController.swift */,
-				95CFC02625F93A7E002CE7A7 /* MainScreenView.swift */,
+				95CFC02125F93A45002CE7A7 /* HomeViewController.swift */,
+				95CFC02625F93A7E002CE7A7 /* HomeView.swift */,
 			);
-			path = MainScreen;
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		9572BCA425F9294F00C5C8C5 /* DetailWebScreen */ = {
@@ -354,8 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CFC02225F93A45002CE7A7 /* MainScreenViewController.swift in Sources */,
-				95CFC02725F93A7E002CE7A7 /* MainScreenView.swift in Sources */,
+				95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */,
+				95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */,
 				9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */,
 				9572BC4725F9200100C5C8C5 /* SplashScreenViewController.swift in Sources */,
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
