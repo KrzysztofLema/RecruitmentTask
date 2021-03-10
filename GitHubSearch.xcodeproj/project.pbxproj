@@ -14,6 +14,7 @@
 		9572BC4F25F9200500C5C8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9572BC4D25F9200500C5C8C5 /* LaunchScreen.storyboard */; };
 		9572BC5A25F9200600C5C8C5 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC5925F9200600C5C8C5 /* GitHubSearchTests.swift */; };
 		9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */; };
+		9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		9572BC5B25F9200600C5C8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9572BC6025F9200600C5C8C5 /* GitHubSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		9572BC4125F9200100C5C8C5 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				9572BCCF25F930C500C5C8C5 /* AppDependencyContainer */,
 				9572BCA125F928FA00C5C8C5 /* Assets */,
 				9572BCA025F928EE00C5C8C5 /* Modules */,
 				9572BC9F25F928CB00C5C8C5 /* Models */,
@@ -185,6 +188,14 @@
 			children = (
 			);
 			path = DetailWebScreen;
+			sourceTree = "<group>";
+		};
+		9572BCCF25F930C500C5C8C5 /* AppDependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */,
+			);
+			path = AppDependencyContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */,
 				9572BC4725F9200100C5C8C5 /* SplashScreenViewController.swift in Sources */,
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
 				9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */,
