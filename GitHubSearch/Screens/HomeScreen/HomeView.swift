@@ -16,7 +16,9 @@ class HomeView: UIView {
         guard hierarchyNotReady else {
             return
         }
-        backgroundColor = .darkGray
+        backgroundColor = .white
+        constructHierarchy()
+        activateConstraints()
         hierarchyNotReady = false
     }
     
@@ -28,4 +30,44 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        return searchBar
+    }()
+    
+    private lazy var resultsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+}
+private extension HomeView {
+    func constructHierarchy() {
+        addSubview(searchBar)
+        addSubview(resultsTableView)
+    }
+    
+    func activateConstraints() {
+        activateSearchBarConstraints()
+        activateResultsTableViewConstraints()
+    }
+    
+    func activateSearchBarConstraints() {
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            searchBar.leftAnchor.constraint(equalTo: leftAnchor),
+            searchBar.rightAnchor.constraint(equalTo: rightAnchor)
+        ])
+    }
+    
+    func activateResultsTableViewConstraints() {
+        NSLayoutConstraint.activate([
+            resultsTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            resultsTableView.leftAnchor.constraint(equalTo: leftAnchor),
+            resultsTableView.rightAnchor.constraint(equalTo: rightAnchor),
+            resultsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 }
