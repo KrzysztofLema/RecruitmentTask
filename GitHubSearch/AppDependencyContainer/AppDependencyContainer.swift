@@ -19,11 +19,11 @@ extension AppDependencyContainer: SplashScreenFactory {
     }
 }
 
-protocol MainViewScreenFactory {
+protocol HomeViewFactory {
     func makeHomeViewControllerFactory() -> HomeViewController
 }
 
-extension AppDependencyContainer: MainViewScreenFactory {
+extension AppDependencyContainer: HomeViewFactory {
     func makeHomeViewControllerFactory() -> HomeViewController {
         return HomeViewController()
     }
