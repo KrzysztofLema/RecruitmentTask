@@ -6,6 +6,11 @@
 //
 
 class AppDependencyContainer {
+    
+    lazy var gitRepositoryAPI: GitRepositoryAPI = {
+        makeGitRepositoryAPI()
+    }()
+    
     init() {}
 }
 
@@ -21,11 +26,16 @@ extension AppDependencyContainer: SplashScreenFactory {
 
 protocol HomeViewFactory {
     func makeHomeViewControllerFactory() -> HomeViewController
+    func makeHomeViewModelFactory() -> HomeViewModel
 }
 
 extension AppDependencyContainer: HomeViewFactory {
+    func makeHomeViewModelFactory() -> HomeViewModel {
+        return HomeViewModel(gitRepositoryApi: gitRepositoryAPI)
+    }
+    
     func makeHomeViewControllerFactory() -> HomeViewController {
-        return HomeViewController()
+        return HomeViewController(viewModel: makeHomeViewModelFactory())
     }
 }
 
@@ -43,5 +53,15 @@ extension AppDependencyContainer: MainViewFactory {
     
     func makeMainViewModel() -> MainViewModel {
         return MainViewModel(mainViewFactories: self)
+    }
+}
+
+protocol GitRepositoryAPIFactory {
+    func makeGitRepositoryAPI() -> GitRepositoryAPI
+}
+
+extension AppDependencyContainer: GitRepositoryAPIFactory {
+    func makeGitRepositoryAPI() -> GitRepositoryAPI {
+        return MockGitRepository()
     }
 }
