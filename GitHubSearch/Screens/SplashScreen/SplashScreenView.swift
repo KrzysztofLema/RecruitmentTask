@@ -10,7 +10,7 @@ import UIKit
 class SplashScreenView: UIView {
     
     var hierarchyNotReady = true
-  
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -23,8 +23,53 @@ class SplashScreenView: UIView {
         guard hierarchyNotReady else {
             return
         }
-        backgroundColor = .red
+        backgroundColor = .systemBlue
+        constructHierarchy()
+        activateConstraints()
         hierarchyNotReady = false
     }
     
+    private lazy var appNameTextLabel: UILabel = {
+        let label = UILabel()
+        label.text = "GIT HUB"
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var appImageView: UIImageView = {
+        let image = UIImage(systemName: "network")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let imageView = UIImageView(image: image)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+}
+private extension SplashScreenView {
+    func constructHierarchy() {
+        addSubview(appNameTextLabel)
+        addSubview(appImageView)
+    }
+    
+    func activateConstraints() {
+        activateAppNameTextLabel()
+        activateAppImageView()
+    }
+    
+    func activateAppNameTextLabel() {
+        NSLayoutConstraint.activate([
+            appNameTextLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            appNameTextLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+    }
+    
+    func activateAppImageView() {
+        NSLayoutConstraint.activate([
+            appImageView.topAnchor.constraint(equalTo: appNameTextLabel.bottomAnchor),
+            appImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            appImageView.widthAnchor.constraint(equalTo: appImageView.widthAnchor),
+            appImageView.heightAnchor.constraint(equalTo: appImageView.widthAnchor)
+            
+        ])
+    }
 }
