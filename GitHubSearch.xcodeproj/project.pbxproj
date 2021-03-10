@@ -93,11 +93,14 @@
 		9572BC4125F9200100C5C8C5 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				9572BCA125F928FA00C5C8C5 /* Assets */,
+				9572BCA025F928EE00C5C8C5 /* Modules */,
+				9572BC9F25F928CB00C5C8C5 /* Models */,
+				9572BC9D25F9289C00C5C8C5 /* Repositories */,
+				9572BC9C25F9288B00C5C8C5 /* ViewModels */,
+				9572BC9B25F9288400C5C8C5 /* Screens */,
 				9572BC4225F9200100C5C8C5 /* AppDelegate.swift */,
 				9572BC4425F9200100C5C8C5 /* SceneDelegate.swift */,
-				9572BC4625F9200100C5C8C5 /* ViewController.swift */,
-				9572BC4B25F9200500C5C8C5 /* Assets.xcassets */,
-				9572BC4D25F9200500C5C8C5 /* LaunchScreen.storyboard */,
 				9572BC5025F9200500C5C8C5 /* Info.plist */,
 			);
 			path = GitHubSearch;
@@ -110,6 +113,75 @@
 				9572BC5B25F9200600C5C8C5 /* Info.plist */,
 			);
 			path = GitHubSearchTests;
+			sourceTree = "<group>";
+		};
+		9572BC9B25F9288400C5C8C5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9572BCA425F9294F00C5C8C5 /* DetailWebScreen */,
+				9572BCA325F9294900C5C8C5 /* MainScreen */,
+				9572BCA225F9294100C5C8C5 /* SplashScreen */,
+				9572BC4625F9200100C5C8C5 /* ViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9572BC9C25F9288B00C5C8C5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9572BC9D25F9289C00C5C8C5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9572BC9F25F928CB00C5C8C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9572BCA025F928EE00C5C8C5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9572BCA125F928FA00C5C8C5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9572BC4B25F9200500C5C8C5 /* Assets.xcassets */,
+				9572BC4D25F9200500C5C8C5 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9572BCA225F9294100C5C8C5 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		9572BCA325F9294900C5C8C5 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		9572BCA425F9294F00C5C8C5 /* DetailWebScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailWebScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
