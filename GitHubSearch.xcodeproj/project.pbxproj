@@ -158,7 +158,7 @@
 		9572BC9F25F928CB00C5C8C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95CFC07525F96BE8002CE7A7 /* Repository.swift */,
+				95CFC07A25F96F80002CE7A7 /* Resources */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +219,14 @@
 				95CFC06425F940FC002CE7A7 /* MainViewModel.swift */,
 			);
 			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		95CFC07A25F96F80002CE7A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95CFC07525F96BE8002CE7A7 /* Repository.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
