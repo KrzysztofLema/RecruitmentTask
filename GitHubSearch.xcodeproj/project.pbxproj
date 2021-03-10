@@ -19,7 +19,8 @@
 		95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02625F93A7E002CE7A7 /* HomeView.swift */; };
 		95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC05C25F93F44002CE7A7 /* MainViewController.swift */; };
 		95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC06425F940FC002CE7A7 /* MainViewModel.swift */; };
-		95CFC07625F96BE8002CE7A7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC07525F96BE8002CE7A7 /* Repository.swift */; };
+		95CFC07625F96BE8002CE7A7 /* GitRepository+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC07525F96BE8002CE7A7 /* GitRepository+Resource.swift */; };
+		95CFC08925F970D7002CE7A7 /* GitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC08825F970D7002CE7A7 /* GitRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,8 @@
 		95CFC02625F93A7E002CE7A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		95CFC05C25F93F44002CE7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		95CFC06425F940FC002CE7A7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		95CFC07525F96BE8002CE7A7 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		95CFC07525F96BE8002CE7A7 /* GitRepository+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GitRepository+Resource.swift"; sourceTree = "<group>"; };
+		95CFC08825F970D7002CE7A7 /* GitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		9572BC9F25F928CB00C5C8C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95CFC08725F970C0002CE7A7 /* Domain */,
 				95CFC07A25F96F80002CE7A7 /* Resources */,
 			);
 			path = Models;
@@ -224,9 +227,17 @@
 		95CFC07A25F96F80002CE7A7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				95CFC07525F96BE8002CE7A7 /* Repository.swift */,
+				95CFC07525F96BE8002CE7A7 /* GitRepository+Resource.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		95CFC08725F970C0002CE7A7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				95CFC08825F970D7002CE7A7 /* GitRepository.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,9 +397,10 @@
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
 				9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */,
 				9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */,
-				95CFC07625F96BE8002CE7A7 /* Repository.swift in Sources */,
+				95CFC07625F96BE8002CE7A7 /* GitRepository+Resource.swift in Sources */,
 				95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */,
 				95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */,
+				95CFC08925F970D7002CE7A7 /* GitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

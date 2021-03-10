@@ -22,3 +22,12 @@ extension Resources {
         }
     }
 }
+
+extension Domain.GitRepository {
+    init(from resources: Resources.GitRepository) {
+        id = resources.id
+        name = resources.name
+        url = resources.url
+        avatarURL = resources.avatarURL
+    }
+}
