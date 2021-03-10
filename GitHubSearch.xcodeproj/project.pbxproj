@@ -17,6 +17,8 @@
 		9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */; };
 		95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02125F93A45002CE7A7 /* HomeViewController.swift */; };
 		95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02625F93A7E002CE7A7 /* HomeView.swift */; };
+		95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC05C25F93F44002CE7A7 /* MainViewController.swift */; };
+		95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC06425F940FC002CE7A7 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		95CFC02125F93A45002CE7A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		95CFC02625F93A7E002CE7A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		95CFC05C25F93F44002CE7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		95CFC06425F940FC002CE7A7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 		9572BC9B25F9288400C5C8C5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				95CFC05B25F93F30002CE7A7 /* MainScreen */,
 				9572BCA425F9294F00C5C8C5 /* DetailWebScreen */,
 				9572BCA325F9294900C5C8C5 /* HomeScreen */,
 				9572BCA225F9294100C5C8C5 /* SplashScreen */,
@@ -202,6 +207,15 @@
 				9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */,
 			);
 			path = AppDependencyContainer;
+			sourceTree = "<group>";
+		};
+		95CFC05B25F93F30002CE7A7 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				95CFC05C25F93F44002CE7A7 /* MainViewController.swift */,
+				95CFC06425F940FC002CE7A7 /* MainViewModel.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +375,8 @@
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
 				9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */,
 				9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */,
+				95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */,
+				95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,3 +28,20 @@ extension AppDependencyContainer: HomeViewFactory {
         return HomeViewController()
     }
 }
+
+typealias MainViewFactories = HomeViewFactory & SplashScreenFactory
+
+protocol MainViewFactory {
+    func makeMainViewControllerFactory() -> MainViewController
+    func makeMainViewModel() -> MainViewModel
+}
+
+extension AppDependencyContainer: MainViewFactory {
+    func makeMainViewControllerFactory() -> MainViewController {
+        return MainViewController(viewModel: makeMainViewModel())
+    }
+    
+    func makeMainViewModel() -> MainViewModel {
+        return MainViewModel(mainViewFactories: self)
+    }
+}
