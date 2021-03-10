@@ -1,5 +1,5 @@
 //
-//  MainScreenView.swift
+//  HomeView.swift
 //  GitHubSearch
 //
 //  Created by Krzysztof Lema on 10/03/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainScreenView: UIView {
+class HomeView: UIView {
     
     var hierarchyNotReady = true
     
