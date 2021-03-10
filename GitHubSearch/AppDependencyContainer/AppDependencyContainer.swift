@@ -18,3 +18,13 @@ extension AppDependencyContainer: SplashScreenFactory {
         return SplashScreenViewController()
     }
 }
+
+protocol MainViewScreenFactory {
+    func makeMainViewControllerFactory() -> MainViewController
+}
+
+extension AppDependencyContainer: MainViewScreenFactory {
+    func makeMainViewControllerFactory() -> MainViewController {
+        return MainViewController()
+    }
+}
