@@ -22,7 +22,8 @@ class HomeView: UIView {
         hierarchyNotReady = false
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         super.init(frame: frame)
     }
     
@@ -45,6 +46,7 @@ class HomeView: UIView {
         return tableView
     }()
     
+    private let viewModel: HomeViewModel
 }
 private extension HomeView {
     func constructHierarchy() {

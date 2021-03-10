@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     }
     
     override func loadView() {
-        view = HomeView()
+        view = HomeView(viewModel: viewModel)
     }
     
     private var viewModel: HomeViewModel

@@ -12,5 +12,5 @@ class HomeViewModel {
         self.gitRepositoryApi = gitRepositoryApi
     }
     
-    private let gitRepositoryApi: GitRepositoryAPI
+    let gitRepositoryApi: GitRepositoryAPI
 }
