@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class HomeView: UIView {
     
@@ -25,6 +26,7 @@ class HomeView: UIView {
     init(frame: CGRect = .zero, viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -47,8 +49,23 @@ class HomeView: UIView {
     }()
     
     private let viewModel: HomeViewModel
+    private var subscriptions = Set<AnyCancellable>()
 }
+
 private extension HomeView {
+    func bind() {
+        
+        viewModel
+            .$gitRepositoryResults
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.resultsTableView.reloadData()
+            }.store(in: &subscriptions)
+    }
+}
+
+private extension HomeView {
+    
     func constructHierarchy() {
         addSubview(searchBar)
         addSubview(resultsTableView)
@@ -80,12 +97,12 @@ private extension HomeView {
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        viewModel.gitRepositoryResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hello")
-        cell?.textLabel?.text = "Hello from cell"
+        cell?.textLabel?.text = viewModel.gitRepositoryResults[indexPath.row].name
         return cell!
     }
 }
