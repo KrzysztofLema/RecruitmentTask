@@ -20,13 +20,13 @@ class HomeView: UIView {
         backgroundColor = .white
         constructHierarchy()
         activateConstraints()
+        bind()
         hierarchyNotReady = false
     }
     
     init(frame: CGRect = .zero, viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(frame: frame)
-        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -107,7 +107,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedItem = viewModel.gitRepositoryResults[indexPath.row].url
-        viewModel.selectedRepository.send()
+        let selectedItemURL = viewModel.gitRepositoryResults[indexPath.row].url
+        viewModel.selectedRepository.send(selectedItemURL!)
     }
 }

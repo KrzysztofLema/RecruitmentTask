@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class WebScreenViewModel {
+    
+    @Published var webURL: URL?
+    
+    init(webURL: URL) {
+        self.webURL = webURL
+    }
+    
+}

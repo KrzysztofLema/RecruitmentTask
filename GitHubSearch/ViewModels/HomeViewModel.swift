@@ -11,7 +11,8 @@ class HomeViewModel {
     
     @Published var searchInput: String = ""
     @Published private(set) var gitRepositoryResults: [Resources.GitRepository] = []
-    let selectedRepository = PassthroughSubject<Void, Never>()
+    let selectedRepository = PassthroughSubject<URL, Never>()
+    var webScreenViewController: WebScreenViewController?
     
     init(gitRepositoryApi: GitRepositoryAPI) {
         self.gitRepositoryApi = gitRepositoryApi

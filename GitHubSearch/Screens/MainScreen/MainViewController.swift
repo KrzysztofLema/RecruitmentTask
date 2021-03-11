@@ -11,9 +11,6 @@ import Combine
 
 class MainViewController: UIViewController {
     
-    let splashScreenViewController: SplashScreenViewController
-    let homeViewController: HomeViewController
-    
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         splashScreenViewController = viewModel.mainViewFactories.makeSplashScreenViewController()
@@ -32,12 +29,14 @@ class MainViewController: UIViewController {
     func present(_ view: ViewToPresent) {
         switch view {
         case .splashScreen:
-            addFullScreen(splashScreenViewController)
+            presentSplashScreen()
         case .mainView:
-            addFullScreen(homeViewController)
+            presentHomeView()
         }
     }
     
+    private let splashScreenViewController: SplashScreenViewController
+    private let homeViewController: HomeViewController
     private let viewModel: MainViewModel
     private var subscriptions = Set<AnyCancellable>()
 }
@@ -51,7 +50,7 @@ private extension MainViewController {
     func presentHomeView() {
         let navigationController = UINavigationController(rootViewController: homeViewController)
         navigationController.modalPresentationStyle = .fullScreen
-        present(homeViewController, animated: true) { [weak self] in
+        present(navigationController, animated: true) { [weak self] in
             guard let self = self else { return }
             self.remove(self.splashScreenViewController)
         }

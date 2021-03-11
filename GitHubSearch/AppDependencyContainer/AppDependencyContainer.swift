@@ -4,6 +4,7 @@
 //
 //  Created by Krzysztof Lema on 10/03/2021.
 //
+import Foundation
 
 class AppDependencyContainer {
     
@@ -35,11 +36,11 @@ extension AppDependencyContainer: HomeViewFactory {
     }
     
     func makeHomeViewControllerFactory() -> HomeViewController {
-        return HomeViewController(viewModel: makeHomeViewModelFactory())
+        return HomeViewController(viewModel: makeHomeViewModelFactory(), viewFactories: self)
     }
 }
 
-typealias MainViewFactories = HomeViewFactory & SplashScreenFactory
+typealias ViewFactories = HomeViewFactory & SplashScreenFactory & WebViewFactory
 
 protocol MainViewFactory {
     func makeMainViewControllerFactory() -> MainViewController
@@ -57,12 +58,17 @@ extension AppDependencyContainer: MainViewFactory {
 }
 
 protocol WebViewFactory {
-    func makeWebViewController() -> WebScreenViewController
+    func makeWebViewController(webURL: URL) -> WebScreenViewController 
+    func makeWebScreenViewModel(webURL: URL) -> WebScreenViewModel
 }
 
 extension AppDependencyContainer: WebViewFactory {
-    func makeWebViewController() -> WebScreenViewController {
-        return WebScreenViewController()
+    func makeWebViewController(webURL: URL) -> WebScreenViewController {
+        return WebScreenViewController(viewModel: makeWebScreenViewModel(webURL: webURL))
+    }
+    
+    func makeWebScreenViewModel(webURL: URL) -> WebScreenViewModel {
+        return WebScreenViewModel(webURL: webURL)
     }
 }
 
