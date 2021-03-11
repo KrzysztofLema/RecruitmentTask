@@ -11,7 +11,7 @@ class HomeViewModel {
     
     @Published var searchInput: String = ""
     @Published private(set) var gitRepositoryResults: [Resources.GitRepository] = []
-    let selectedRepository = PassthroughSubject<URL, Never>()
+    let selectedRepository = PassthroughSubject<Resources.GitRepository, Never>()
     var webScreenViewController: WebScreenViewController?
     
     init(gitRepositoryApi: GitRepositoryAPI) {
@@ -22,10 +22,14 @@ class HomeViewModel {
     func bind() {
         $searchInput
             .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
+            .filter { !$0.isEmpty }
             .sink { [weak self] searchValue in
             guard let self = self else { return }
             self.searchForGitRepositories(with: searchValue)
         }.store(in: &subscriptions)
+        
+       
+            
     }
     
     private let gitRepositoryApi: GitRepositoryAPI

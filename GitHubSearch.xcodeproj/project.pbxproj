@@ -16,7 +16,6 @@
 		9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */; };
 		9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */; };
 		958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */; };
-		958D8D1F25F9F50200480678 /* GitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1E25F9F50200480678 /* GitResponse.swift */; };
 		958D8D2825FA005600480678 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D2725FA005600480678 /* DebugPrint.swift */; };
 		958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D3C25FA016C00480678 /* Date+Formatting.swift */; };
 		9598A47625FA4422005BEDC8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A47525FA4422005BEDC8 /* WebViewController.swift */; };
@@ -27,7 +26,6 @@
 		95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC05C25F93F44002CE7A7 /* MainViewController.swift */; };
 		95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC06425F940FC002CE7A7 /* MainViewModel.swift */; };
 		95CFC07625F96BE8002CE7A7 /* GitRepository+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC07525F96BE8002CE7A7 /* GitRepository+Resource.swift */; };
-		95CFC08925F970D7002CE7A7 /* GitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC08825F970D7002CE7A7 /* GitRepository.swift */; };
 		95CFC09B25F97B9D002CE7A7 /* GitRepositoryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC09A25F97B9D002CE7A7 /* GitRepositoryApi.swift */; };
 		95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */; };
 		95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */; };
@@ -65,7 +63,6 @@
 		9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApiImpl.swift; sourceTree = "<group>"; };
-		958D8D1E25F9F50200480678 /* GitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitResponse.swift; sourceTree = "<group>"; };
 		958D8D2725FA005600480678 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
 		958D8D3C25FA016C00480678 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		9598A47525FA4422005BEDC8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +73,6 @@
 		95CFC05C25F93F44002CE7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		95CFC06425F940FC002CE7A7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		95CFC07525F96BE8002CE7A7 /* GitRepository+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GitRepository+Resource.swift"; sourceTree = "<group>"; };
-		95CFC08825F970D7002CE7A7 /* GitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepository.swift; sourceTree = "<group>"; };
 		95CFC09A25F97B9D002CE7A7 /* GitRepositoryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApi.swift; sourceTree = "<group>"; };
 		95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGitRepository.swift; sourceTree = "<group>"; };
 		95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -129,16 +125,16 @@
 		9572BC4125F9200100C5C8C5 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
-				958D8D2625FA004B00480678 /* Helpers */,
-				9572BCCF25F930C500C5C8C5 /* AppDependencyContainer */,
-				9572BCA125F928FA00C5C8C5 /* Assets */,
-				9572BC9F25F928CB00C5C8C5 /* Models */,
-				9572BC9D25F9289C00C5C8C5 /* Repositories */,
-				9572BC9C25F9288B00C5C8C5 /* ViewModels */,
-				9572BC9B25F9288400C5C8C5 /* Screens */,
+				9572BC5025F9200500C5C8C5 /* Info.plist */,
 				9572BC4225F9200100C5C8C5 /* AppDelegate.swift */,
 				9572BC4425F9200100C5C8C5 /* SceneDelegate.swift */,
-				9572BC5025F9200500C5C8C5 /* Info.plist */,
+				9572BCCF25F930C500C5C8C5 /* AppDependencyContainer */,
+				9572BCA125F928FA00C5C8C5 /* Assets */,
+				958D8D2625FA004B00480678 /* Helpers */,
+				9572BC9F25F928CB00C5C8C5 /* Models */,
+				9572BC9D25F9289C00C5C8C5 /* Repositories */,
+				9572BC9B25F9288400C5C8C5 /* Screens */,
+				9572BC9C25F9288B00C5C8C5 /* ViewModels */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
@@ -184,7 +180,6 @@
 		9572BC9F25F928CB00C5C8C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95CFC08725F970C0002CE7A7 /* Domain */,
 				95CFC07A25F96F80002CE7A7 /* Resources */,
 			);
 			path = Models;
@@ -265,15 +260,6 @@
 				95CFC07525F96BE8002CE7A7 /* GitRepository+Resource.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		95CFC08725F970C0002CE7A7 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				95CFC08825F970D7002CE7A7 /* GitRepository.swift */,
-				958D8D1E25F9F50200480678 /* GitResponse.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		95CFC09925F97B74002CE7A7 /* GitRepositoryAPI */ = {
@@ -459,12 +445,10 @@
 				95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */,
 				9598A47625FA4422005BEDC8 /* WebViewController.swift in Sources */,
 				95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */,
-				958D8D1F25F9F50200480678 /* GitResponse.swift in Sources */,
 				9598A47E25FA442F005BEDC8 /* WebScreenView.swift in Sources */,
 				958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */,
 				95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */,
 				95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */,
-				95CFC08925F970D7002CE7A7 /* GitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

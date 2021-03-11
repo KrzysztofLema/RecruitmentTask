@@ -9,10 +9,9 @@ import Foundation
 
 class WebScreenViewModel {
     
-    @Published var webURL: URL?
+    @Published var gitRepository: Resources.GitRepository?
     
-    init(webURL: URL) {
-        self.webURL = webURL
+    init(gitRepository: Resources.GitRepository) {
+        self.gitRepository = gitRepository
     }
-    
 }

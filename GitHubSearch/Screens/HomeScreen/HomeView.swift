@@ -110,10 +110,8 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedItemURL = viewModel.gitRepositoryResults[indexPath.row].url else {
-            return
-        }
-        viewModel.selectedRepository.send(selectedItemURL)
+        let selectedItem = viewModel.gitRepositoryResults[indexPath.row]
+        viewModel.selectedRepository.send(selectedItem)
     }
 }
 
