@@ -33,7 +33,7 @@ private extension HomeViewModel {
         gitRepositoryApi
             .getRepositorySearchResult(for: searchInput)
             .sink { error in
-                
+                print(error)
             } receiveValue: { searchResult in
                 self.gitRepositoryResults = searchResult
             }.store(in: &subscriptions)

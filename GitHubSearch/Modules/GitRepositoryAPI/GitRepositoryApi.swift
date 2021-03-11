@@ -13,6 +13,8 @@ protocol GitRepositoryAPI {
 }
 
 enum GitRepositoryAPIError: Error {
+    case unknown
+    case wrongURL
     case decoding
     case notHTTPResponse
     case badHTTPResponse(statusCode: Int)
