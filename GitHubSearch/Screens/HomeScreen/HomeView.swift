@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class HomeView: UIView {
     
@@ -22,8 +23,10 @@ class HomeView: UIView {
         hierarchyNotReady = false
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         super.init(frame: frame)
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -38,12 +41,30 @@ class HomeView: UIView {
     
     private lazy var resultsTableView: UITableView = {
         let tableView = UITableView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "hello")
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
+    private let viewModel: HomeViewModel
+    private var subscriptions = Set<AnyCancellable>()
 }
+
 private extension HomeView {
+    func bind() {
+        viewModel
+            .$gitRepositoryResults
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.resultsTableView.reloadData()
+            }.store(in: &subscriptions)
+    }
+}
+
+private extension HomeView {
+    
     func constructHierarchy() {
         addSubview(searchBar)
         addSubview(resultsTableView)
@@ -69,5 +90,23 @@ private extension HomeView {
             resultsTableView.rightAnchor.constraint(equalTo: rightAnchor),
             resultsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+extension HomeView: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.gitRepositoryResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hello")
+        cell?.textLabel?.text = viewModel.gitRepositoryResults[indexPath.row].name
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = viewModel.gitRepositoryResults[indexPath.row]
+        print("\(selectedItem.name!)")
     }
 }

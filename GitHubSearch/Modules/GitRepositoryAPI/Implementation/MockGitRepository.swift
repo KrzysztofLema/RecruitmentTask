@@ -16,7 +16,7 @@ class MockGitRepository: GitRepositoryAPI {
         for text: String
     ) -> AnyPublisher<[Domain.GitRepository], GitRepositoryAPIError> {
         Future { promise in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 let repositories: [Domain.GitRepository] = [
                 Domain.GitRepository(id: 0, name: "asd", url: URL(string: ""), avatarURL: URL(string: "")),
                 Domain.GitRepository(id: 1, name: "asd", url: URL(string: ""), avatarURL: URL(string: "")),
