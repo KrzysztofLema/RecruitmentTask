@@ -14,15 +14,17 @@ class MockGitRepository: GitRepositoryAPI {
     
     func getRepositorySearchResult(
         for text: String
-    ) -> AnyPublisher<[Domain.GitRepository], GitRepositoryAPIError> {
+    ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
         Future { promise in
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                let repositories: [Domain.GitRepository] = [
-                Domain.GitRepository(id: 0, name: "asd", url: URL(string: ""), avatarURL: URL(string: "")),
-                Domain.GitRepository(id: 1, name: "asd", url: URL(string: ""), avatarURL: URL(string: "")),
-                Domain.GitRepository(id: 2, name: "asd", url: URL(string: ""), avatarURL: URL(string: ""))
-            ]
-            promise(.success(repositories))}
+                let repositories: Resources.GitResponse =
+                    Resources.GitResponse(items: [
+                        Resources.GitRepository(id: 0, name: "Krzysztof", url: URL(string: "www.google.pl")),
+                        Resources.GitRepository(id: 0, name: "Krzysztof", url: URL(string: "www.google.pl")),
+                        Resources.GitRepository(id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"))
+                    ])
+                
+                promise(.success(repositories))}
         }.eraseToAnyPublisher()
     }
 }

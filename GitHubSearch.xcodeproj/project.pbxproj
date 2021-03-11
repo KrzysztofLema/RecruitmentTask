@@ -15,6 +15,10 @@
 		9572BC5A25F9200600C5C8C5 /* GitHubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC5925F9200600C5C8C5 /* GitHubSearchTests.swift */; };
 		9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */; };
 		9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */; };
+		958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */; };
+		958D8D1F25F9F50200480678 /* GitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1E25F9F50200480678 /* GitResponse.swift */; };
+		958D8D2825FA005600480678 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D2725FA005600480678 /* DebugPrint.swift */; };
+		958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D3C25FA016C00480678 /* Date+Formatting.swift */; };
 		95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02125F93A45002CE7A7 /* HomeViewController.swift */; };
 		95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02625F93A7E002CE7A7 /* HomeView.swift */; };
 		95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC05C25F93F44002CE7A7 /* MainViewController.swift */; };
@@ -57,6 +61,10 @@
 		9572BC6025F9200600C5C8C5 /* GitHubSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
+		958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApiImpl.swift; sourceTree = "<group>"; };
+		958D8D1E25F9F50200480678 /* GitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitResponse.swift; sourceTree = "<group>"; };
+		958D8D2725FA005600480678 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		958D8D3C25FA016C00480678 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		95CFC02125F93A45002CE7A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		95CFC02625F93A7E002CE7A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		95CFC05C25F93F44002CE7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +123,7 @@
 		9572BC4125F9200100C5C8C5 /* GitHubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				958D8D2625FA004B00480678 /* Helpers */,
 				9572BCCF25F930C500C5C8C5 /* AppDependencyContainer */,
 				9572BCA125F928FA00C5C8C5 /* Assets */,
 				9572BCA025F928EE00C5C8C5 /* Modules */,
@@ -223,6 +232,23 @@
 			path = AppDependencyContainer;
 			sourceTree = "<group>";
 		};
+		958D8D2625FA004B00480678 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				958D8D3B25FA015900480678 /* Extensions */,
+				958D8D2725FA005600480678 /* DebugPrint.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		958D8D3B25FA015900480678 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				958D8D3C25FA016C00480678 /* Date+Formatting.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		95CFC05B25F93F30002CE7A7 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				95CFC08825F970D7002CE7A7 /* GitRepository.swift */,
+				958D8D1E25F9F50200480678 /* GitResponse.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -261,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */,
+				958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -417,15 +445,19 @@
 			files = (
 				95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */,
 				95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */,
+				958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */,
 				9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */,
 				9572BC4725F9200100C5C8C5 /* SplashScreenViewController.swift in Sources */,
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
 				9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */,
+				958D8D2825FA005600480678 /* DebugPrint.swift in Sources */,
 				9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */,
 				95CFC09B25F97B9D002CE7A7 /* GitRepositoryApi.swift in Sources */,
 				95CFC07625F96BE8002CE7A7 /* GitRepository+Resource.swift in Sources */,
 				95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */,
 				95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */,
+				958D8D1F25F9F50200480678 /* GitResponse.swift in Sources */,
+				958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */,
 				95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */,
 				95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */,
 				95CFC08925F970D7002CE7A7 /* GitRepository.swift in Sources */,

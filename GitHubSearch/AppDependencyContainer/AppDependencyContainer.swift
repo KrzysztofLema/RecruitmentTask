@@ -62,6 +62,6 @@ protocol GitRepositoryAPIFactory {
 
 extension AppDependencyContainer: GitRepositoryAPIFactory {
     func makeGitRepositoryAPI() -> GitRepositoryAPI {
-        return MockGitRepository()
+        return GitRepositoryApiImpl()
     }
 }
