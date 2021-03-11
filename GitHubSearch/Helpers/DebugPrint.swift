@@ -21,7 +21,7 @@ fileprivate struct DebugPrintToShow: OptionSet {
 
 fileprivate func debugPrint(_ item: Any) {
     #if DEBUG
-    print("[\(Date().iso8601WithFractionalSeconds)] \(item)")
+    print("[\(Date())] \(item)")
     #endif
 }
 

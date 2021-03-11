@@ -12,14 +12,14 @@ enum Resources {}
 extension Resources {
     
     struct GitResponse: Codable {
-        var totalCount: Int
-        var incompleteResults: Bool
+//        var totalCount: Int
+//        var incompleteResults: Bool
         var items: [GitRepository]?
         
-        enum CodingKeys: String, CodingKey {
-            case totalCount = "total_count"
-            case incompleteResults = "incomplete_results"
-        }
+//        enum CodingKeys: String, CodingKey {
+////            case totalCount = "total_count"
+////            case incompleteResults = "incomplete_results"
+//        }
     }
     
     struct GitRepository: Codable {

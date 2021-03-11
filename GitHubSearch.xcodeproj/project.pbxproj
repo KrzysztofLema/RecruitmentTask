@@ -18,6 +18,7 @@
 		958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */; };
 		958D8D1F25F9F50200480678 /* GitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1E25F9F50200480678 /* GitResponse.swift */; };
 		958D8D2825FA005600480678 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D2725FA005600480678 /* DebugPrint.swift */; };
+		958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D3C25FA016C00480678 /* Date+Formatting.swift */; };
 		95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02125F93A45002CE7A7 /* HomeViewController.swift */; };
 		95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02625F93A7E002CE7A7 /* HomeView.swift */; };
 		95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC05C25F93F44002CE7A7 /* MainViewController.swift */; };
@@ -63,6 +64,7 @@
 		958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApiImpl.swift; sourceTree = "<group>"; };
 		958D8D1E25F9F50200480678 /* GitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitResponse.swift; sourceTree = "<group>"; };
 		958D8D2725FA005600480678 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		958D8D3C25FA016C00480678 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		95CFC02125F93A45002CE7A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		95CFC02625F93A7E002CE7A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		95CFC05C25F93F44002CE7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -233,9 +235,18 @@
 		958D8D2625FA004B00480678 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				958D8D3B25FA015900480678 /* Extensions */,
 				958D8D2725FA005600480678 /* DebugPrint.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		958D8D3B25FA015900480678 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				958D8D3C25FA016C00480678 /* Date+Formatting.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		95CFC05B25F93F30002CE7A7 /* MainScreen */ = {
@@ -434,6 +445,7 @@
 			files = (
 				95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */,
 				95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */,
+				958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */,
 				9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */,
 				9572BC4725F9200100C5C8C5 /* SplashScreenViewController.swift in Sources */,
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
