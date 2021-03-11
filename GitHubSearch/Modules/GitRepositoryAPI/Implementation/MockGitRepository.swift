@@ -16,12 +16,13 @@ class MockGitRepository: GitRepositoryAPI {
         for text: String
     ) -> AnyPublisher<[Domain.GitRepository], GitRepositoryAPIError> {
         Future { promise in
-            let repositories: [Domain.GitRepository] = [
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                let repositories: [Domain.GitRepository] = [
                 Domain.GitRepository(id: 0, name: "asd", url: URL(string: ""), avatarURL: URL(string: "")),
                 Domain.GitRepository(id: 1, name: "asd", url: URL(string: ""), avatarURL: URL(string: "")),
                 Domain.GitRepository(id: 2, name: "asd", url: URL(string: ""), avatarURL: URL(string: ""))
             ]
-            promise(.success(repositories))
+            promise(.success(repositories))}
         }.eraseToAnyPublisher()
     }
 }
