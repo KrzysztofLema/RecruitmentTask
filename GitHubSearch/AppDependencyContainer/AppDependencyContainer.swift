@@ -56,6 +56,16 @@ extension AppDependencyContainer: MainViewFactory {
     }
 }
 
+protocol WebViewFactory {
+    func makeWebViewController() -> WebScreenViewController
+}
+
+extension AppDependencyContainer: WebViewFactory {
+    func makeWebViewController() -> WebScreenViewController {
+        return WebScreenViewController()
+    }
+}
+
 protocol GitRepositoryAPIFactory {
     func makeGitRepositoryAPI() -> GitRepositoryAPI
 }

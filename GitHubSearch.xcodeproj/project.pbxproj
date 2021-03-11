@@ -19,6 +19,9 @@
 		958D8D1F25F9F50200480678 /* GitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1E25F9F50200480678 /* GitResponse.swift */; };
 		958D8D2825FA005600480678 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D2725FA005600480678 /* DebugPrint.swift */; };
 		958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D3C25FA016C00480678 /* Date+Formatting.swift */; };
+		9598A47625FA4422005BEDC8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A47525FA4422005BEDC8 /* WebViewController.swift */; };
+		9598A47E25FA442F005BEDC8 /* WebScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A47D25FA442F005BEDC8 /* WebScreenView.swift */; };
+		9598A48325FA443D005BEDC8 /* WebScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A48225FA443D005BEDC8 /* WebScreenViewModel.swift */; };
 		95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02125F93A45002CE7A7 /* HomeViewController.swift */; };
 		95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC02625F93A7E002CE7A7 /* HomeView.swift */; };
 		95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC05C25F93F44002CE7A7 /* MainViewController.swift */; };
@@ -65,6 +68,9 @@
 		958D8D1E25F9F50200480678 /* GitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitResponse.swift; sourceTree = "<group>"; };
 		958D8D2725FA005600480678 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
 		958D8D3C25FA016C00480678 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
+		9598A47525FA4422005BEDC8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		9598A47D25FA442F005BEDC8 /* WebScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebScreenView.swift; sourceTree = "<group>"; };
+		9598A48225FA443D005BEDC8 /* WebScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebScreenViewModel.swift; sourceTree = "<group>"; };
 		95CFC02125F93A45002CE7A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		95CFC02625F93A7E002CE7A7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		95CFC05C25F93F44002CE7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				95CFC05B25F93F30002CE7A7 /* MainScreen */,
-				9572BCA425F9294F00C5C8C5 /* DetailWebScreen */,
+				9572BCA425F9294F00C5C8C5 /* WebScreen */,
 				9572BCA325F9294900C5C8C5 /* HomeScreen */,
 				9572BCA225F9294100C5C8C5 /* SplashScreen */,
 			);
@@ -162,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */,
+				9598A48225FA443D005BEDC8 /* WebScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -217,11 +224,13 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
-		9572BCA425F9294F00C5C8C5 /* DetailWebScreen */ = {
+		9572BCA425F9294F00C5C8C5 /* WebScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9598A47525FA4422005BEDC8 /* WebViewController.swift */,
+				9598A47D25FA442F005BEDC8 /* WebScreenView.swift */,
 			);
-			path = DetailWebScreen;
+			path = WebScreen;
 			sourceTree = "<group>";
 		};
 		9572BCCF25F930C500C5C8C5 /* AppDependencyContainer */ = {
@@ -443,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9598A48325FA443D005BEDC8 /* WebScreenViewModel.swift in Sources */,
 				95CFC02225F93A45002CE7A7 /* HomeViewController.swift in Sources */,
 				95CFC02725F93A7E002CE7A7 /* HomeView.swift in Sources */,
 				958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */,
@@ -455,8 +465,10 @@
 				95CFC09B25F97B9D002CE7A7 /* GitRepositoryApi.swift in Sources */,
 				95CFC07625F96BE8002CE7A7 /* GitRepository+Resource.swift in Sources */,
 				95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */,
+				9598A47625FA4422005BEDC8 /* WebViewController.swift in Sources */,
 				95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */,
 				958D8D1F25F9F50200480678 /* GitResponse.swift in Sources */,
+				9598A47E25FA442F005BEDC8 /* WebScreenView.swift in Sources */,
 				958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */,
 				95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */,
 				95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */,
