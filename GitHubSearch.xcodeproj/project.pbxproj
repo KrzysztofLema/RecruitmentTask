@@ -167,6 +167,7 @@
 		9572BC9C25F9288B00C5C8C5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				95CFC06425F940FC002CE7A7 /* MainViewModel.swift */,
 				95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */,
 				9598A48225FA443D005BEDC8 /* WebScreenViewModel.swift */,
 			);
@@ -262,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				95CFC05C25F93F44002CE7A7 /* MainViewController.swift */,
-				95CFC06425F940FC002CE7A7 /* MainViewModel.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";

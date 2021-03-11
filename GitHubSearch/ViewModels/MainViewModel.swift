@@ -10,14 +10,14 @@ class MainViewModel {
     
     @Published var viewToPresent: ViewToPresent = .splashScreen
     
-    init(mainViewFactories: MainViewFactories) {
+    init(mainViewFactories: ViewFactories) {
         self.mainViewFactories = mainViewFactories
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.viewToPresent = .mainView
         }
     }
     
-    let mainViewFactories: MainViewFactories
+    let mainViewFactories: ViewFactories
 }
 
 enum ViewToPresent {

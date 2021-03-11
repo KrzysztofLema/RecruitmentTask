@@ -10,7 +10,8 @@ import UIKit
 
 class WebScreenViewController: UIViewController {
     
-    init() {
+    init(viewModel: WebScreenViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -19,6 +20,8 @@ class WebScreenViewController: UIViewController {
     }
     
     override func loadView() {
-        view = WebScreenView()
+        view = WebScreenView(viewModel: viewModel)
     }
+    
+    private let viewModel: WebScreenViewModel
 }

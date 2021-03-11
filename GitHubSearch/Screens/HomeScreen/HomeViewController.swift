@@ -7,10 +7,11 @@
 
 import UIKit
 import Combine
-class HomeViewController: UINavigationController {
+class HomeViewController: UIViewController {
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel, viewFactories: ViewFactories) {
         self.viewModel = viewModel
+        self.viewFactories = viewFactories
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,14 +28,16 @@ class HomeViewController: UINavigationController {
         view = HomeView(viewModel: viewModel)
     }
     
+    private let viewFactories: ViewFactories
     private let viewModel: HomeViewModel
     private var subscription = Set<AnyCancellable>()
 }
 
 private extension HomeViewController {
     func bind() {
-        viewModel.selectedRepository.sink { _ in
-            self.presentingViewController?.navigationController?.pushViewController(WebScreenViewController(), animated: true)
+        viewModel.selectedRepository.sink { [weak self] url in
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(self.viewFactories.makeWebViewController(webURL: url), animated: true)
         }.store(in: &subscription)
     }
 }

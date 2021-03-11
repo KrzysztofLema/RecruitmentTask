@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import WebKit
+import Combine
 
 class WebScreenView: UIView {
     var hierarchyNotReady = true
@@ -23,7 +24,8 @@ class WebScreenView: UIView {
         hierarchyNotReady = false
     }
     
-    override init(frame: CGRect = .zero) {
+    init(frame: CGRect = .zero, viewModel: WebScreenViewModel) {
+        self.viewModel = viewModel
         super.init(frame: frame)
         bind()
     }
@@ -36,20 +38,26 @@ class WebScreenView: UIView {
         let webViewConfiguration = WKWebViewConfiguration()
         let webView = WKWebView(frame: .zero, configuration: webViewConfiguration)
         webView.uiDelegate = self
-        let myURL = URL(string:"https://www.apple.com")!
-        webView.load(URLRequest(url: myURL))
         webView.translatesAutoresizingMaskIntoConstraints = false
         return webView
     }()
+    
+    private let viewModel: WebScreenViewModel
+    private var subscriptions = Set<AnyCancellable>()
 }
 
 private extension WebScreenView {
     func bind() {
-        
+        viewModel.$webURL
+            .sink { [weak self] url in
+                guard let self = self, let url = url else { return }
+                let urlRequest = URLRequest(url: url)
+                self.repositoryDetailWebView.load(urlRequest)
+            }.store(in: &subscriptions)
     }
     
     func constructHierarchy() {
-      addSubview(repositoryDetailWebView)
+        addSubview(repositoryDetailWebView)
     }
     
     func activateConstraints() {
