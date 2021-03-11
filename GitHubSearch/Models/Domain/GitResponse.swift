@@ -6,8 +6,11 @@
 //
 
 import Foundation
-struct GitResponse {
-    var totalCount: Int
-    var incompleteResults: Bool
-    let items: [Domain.GitRepository]
+extension Domain {
+    struct GitResponse {
+        var totalCount: Int
+        var incompleteResults: Bool
+        let items: [Domain.GitRepository]
+    }
 }
+

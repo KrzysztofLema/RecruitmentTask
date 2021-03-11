@@ -35,8 +35,6 @@ extension Resources {
     }
 }
 
-
-
 extension Domain.GitRepository {
     init(from resources: Resources.GitRepository) {
         id = resources.id
@@ -44,4 +42,7 @@ extension Domain.GitRepository {
         url = resources.url
         avatarURL = resources.avatarURL
     }
+}
+
+extension Domain.GitResponse {
 }

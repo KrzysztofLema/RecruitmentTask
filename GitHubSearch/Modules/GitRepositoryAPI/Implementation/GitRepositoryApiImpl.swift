@@ -12,7 +12,7 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
     
     let urlSession = URLSession(configuration: URLSessionConfiguration.default)
     
-    func getRepositorySearchResult(for text: String) -> AnyPublisher<[Domain.GitRepository], GitRepositoryAPIError> {
+    func getRepositorySearchResult(for text: String) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
         Future { [weak self] promise in
             guard let self = self else { return }
             let baseURL = "https://api.github.com/search/repositories?q=language:Swift+language:RXSwift&sort=stars&order=desc"
@@ -44,10 +44,10 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
                 do {
                     let jsonDecoder = JSONDecoder()
                     jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let decodedData = try jsonDecoder.decode([Resources.GitResponse].self, from: data)
-                    
+                    let decodedData = try jsonDecoder.decode(Resources.GitResponse.self, from: data)
+                 
 
-                    promise(.success(result))
+                    promise(.success(decodedData))
                 } catch {
                     promise(.failure(GitRepositoryAPIError.decoding))
                 }
