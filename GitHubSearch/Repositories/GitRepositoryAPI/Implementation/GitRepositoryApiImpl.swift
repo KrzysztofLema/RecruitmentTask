@@ -12,7 +12,10 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
     
     let urlSession = URLSession(configuration: URLSessionConfiguration.default)
     
-    func getRepositorySearchResult(for text: String, sortedBy sorting: Sorting? = .numberOfStars) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
+    func getRepositorySearchResult(
+        for text: String,
+        sortedBy sorting: Sorting? = .numberOfStars
+    ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
         Future { [weak self] promise in
             guard let self = self else { return }
             var components = URLComponents()
@@ -40,7 +43,8 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
                 }
                 
                 guard (200..<300).contains(httpResponse.statusCode) else {
-                    promise(.failure(GitRepositoryAPIError.badHTTPResponse(statusCode: httpResponse.statusCode)))
+                    let error = GitRepositoryAPIError.badHTTPResponse(statusCode: httpResponse.statusCode)
+                    promise(.failure(error))
                     return
                 }
                 
@@ -58,7 +62,7 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
                     promise(.failure(GitRepositoryAPIError.decoding))
                 }
             }.resume()
-
+            
         }.eraseToAnyPublisher()
     }
 }

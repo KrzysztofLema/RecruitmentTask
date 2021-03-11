@@ -12,7 +12,10 @@ class MockGitRepository: GitRepositoryAPI {
     
     init() {}
     
-    func getRepositorySearchResult(for text: String, sortedBy sorting: Sorting? = .numberOfStars) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
+    func getRepositorySearchResult(
+        for text: String,
+        sortedBy sorting: Sorting? = .numberOfStars
+    ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
         Future { promise in
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 let repositories: Resources.GitResponse =

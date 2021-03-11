@@ -48,9 +48,9 @@ class WebScreenView: UIView {
 
 private extension WebScreenView {
     func bind() {
-        viewModel.$webURL
-            .sink { [weak self] url in
-                guard let self = self, let url = url else { return }
+        viewModel.$gitRepository
+            .sink { [weak self] gitRepository in
+                guard let self = self, let url = gitRepository?.url else { return }
                 let urlRequest = URLRequest(url: url)
                 self.repositoryDetailWebView.load(urlRequest)
             }.store(in: &subscriptions)

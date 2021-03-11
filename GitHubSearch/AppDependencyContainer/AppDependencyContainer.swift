@@ -6,6 +6,8 @@
 //
 import Foundation
 
+typealias ViewFactories = HomeViewFactory & SplashScreenFactory & WebViewFactory
+
 class AppDependencyContainer {
     
     lazy var gitRepositoryAPI: GitRepositoryAPI = {
@@ -19,15 +21,29 @@ protocol SplashScreenFactory {
     func makeSplashScreenViewController() -> SplashScreenViewController
 }
 
+protocol HomeViewFactory {
+    func makeHomeViewControllerFactory() -> HomeViewController
+    func makeHomeViewModelFactory() -> HomeViewModel
+}
+
 extension AppDependencyContainer: SplashScreenFactory {
     func makeSplashScreenViewController() -> SplashScreenViewController {
         return SplashScreenViewController()
     }
 }
 
-protocol HomeViewFactory {
-    func makeHomeViewControllerFactory() -> HomeViewController
-    func makeHomeViewModelFactory() -> HomeViewModel
+protocol MainViewFactory {
+    func makeMainViewControllerFactory() -> MainViewController
+    func makeMainViewModel() -> MainViewModel
+}
+
+protocol WebViewFactory {
+    func makeWebViewController(gitRepository: Resources.GitRepository) -> WebScreenViewController
+    func makeWebScreenViewModel(gitRepository: Resources.GitRepository) -> WebScreenViewModel
+}
+
+protocol GitRepositoryAPIFactory {
+    func makeGitRepositoryAPI() -> GitRepositoryAPI
 }
 
 extension AppDependencyContainer: HomeViewFactory {
@@ -40,13 +56,6 @@ extension AppDependencyContainer: HomeViewFactory {
     }
 }
 
-typealias ViewFactories = HomeViewFactory & SplashScreenFactory & WebViewFactory
-
-protocol MainViewFactory {
-    func makeMainViewControllerFactory() -> MainViewController
-    func makeMainViewModel() -> MainViewModel
-}
-
 extension AppDependencyContainer: MainViewFactory {
     func makeMainViewControllerFactory() -> MainViewController {
         return MainViewController(viewModel: makeMainViewModel())
@@ -57,23 +66,14 @@ extension AppDependencyContainer: MainViewFactory {
     }
 }
 
-protocol WebViewFactory {
-    func makeWebViewController(webURL: URL) -> WebScreenViewController 
-    func makeWebScreenViewModel(webURL: URL) -> WebScreenViewModel
-}
-
 extension AppDependencyContainer: WebViewFactory {
-    func makeWebViewController(webURL: URL) -> WebScreenViewController {
-        return WebScreenViewController(viewModel: makeWebScreenViewModel(webURL: webURL))
+    func makeWebViewController(gitRepository: Resources.GitRepository) -> WebScreenViewController {
+        return WebScreenViewController(viewModel: makeWebScreenViewModel(gitRepository: gitRepository))
     }
     
-    func makeWebScreenViewModel(webURL: URL) -> WebScreenViewModel {
-        return WebScreenViewModel(webURL: webURL)
+    func makeWebScreenViewModel(gitRepository: Resources.GitRepository) -> WebScreenViewModel {
+        return WebScreenViewModel(gitRepository: gitRepository)
     }
-}
-
-protocol GitRepositoryAPIFactory {
-    func makeGitRepositoryAPI() -> GitRepositoryAPI
 }
 
 extension AppDependencyContainer: GitRepositoryAPIFactory {

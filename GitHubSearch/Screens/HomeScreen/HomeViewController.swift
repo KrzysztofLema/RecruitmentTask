@@ -35,9 +35,10 @@ class HomeViewController: UIViewController {
 
 private extension HomeViewController {
     func bind() {
-        viewModel.selectedRepository.sink { [weak self] url in
+        viewModel.selectedRepository.sink { [weak self] gitRepository in
             guard let self = self else { return }
-            self.navigationController?.pushViewController(self.viewFactories.makeWebViewController(webURL: url), animated: true)
+            let webViewController = self.viewFactories.makeWebViewController(gitRepository: gitRepository)
+            self.navigationController?.pushViewController(webViewController, animated: true)
         }.store(in: &subscription)
     }
 }
