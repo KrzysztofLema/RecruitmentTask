@@ -132,7 +132,6 @@
 				958D8D2625FA004B00480678 /* Helpers */,
 				9572BCCF25F930C500C5C8C5 /* AppDependencyContainer */,
 				9572BCA125F928FA00C5C8C5 /* Assets */,
-				9572BCA025F928EE00C5C8C5 /* Modules */,
 				9572BC9F25F928CB00C5C8C5 /* Models */,
 				9572BC9D25F9289C00C5C8C5 /* Repositories */,
 				9572BC9C25F9288B00C5C8C5 /* ViewModels */,
@@ -177,6 +176,7 @@
 		9572BC9D25F9289C00C5C8C5 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				95CFC09925F97B74002CE7A7 /* GitRepositoryAPI */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -188,14 +188,6 @@
 				95CFC07A25F96F80002CE7A7 /* Resources */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		9572BCA025F928EE00C5C8C5 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				95CFC09925F97B74002CE7A7 /* GitRepositoryAPI */,
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		9572BCA125F928FA00C5C8C5 /* Assets */ = {

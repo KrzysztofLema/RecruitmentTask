@@ -13,4 +13,3 @@ extension Domain {
         let items: [Domain.GitRepository]
     }
 }
-

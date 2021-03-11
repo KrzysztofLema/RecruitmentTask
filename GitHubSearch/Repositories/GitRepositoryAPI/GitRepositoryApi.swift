@@ -8,7 +8,10 @@
 import Foundation
 import Combine
 protocol GitRepositoryAPI {
-    func getRepositorySearchResult(for text: String, sortedBy sorting: Sorting?) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError>
+    func getRepositorySearchResult(
+        for text: String,
+        sortedBy sorting: Sorting?
+    ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError>
 }
 
 enum GitRepositoryAPIError: Error {

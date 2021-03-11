@@ -6,6 +6,8 @@
 //
 import Foundation
 
+typealias ViewFactories = HomeViewFactory & SplashScreenFactory & WebViewFactory
+
 class AppDependencyContainer {
     
     lazy var gitRepositoryAPI: GitRepositoryAPI = {
@@ -39,8 +41,6 @@ extension AppDependencyContainer: HomeViewFactory {
         return HomeViewController(viewModel: makeHomeViewModelFactory(), viewFactories: self)
     }
 }
-
-typealias ViewFactories = HomeViewFactory & SplashScreenFactory & WebViewFactory
 
 protocol MainViewFactory {
     func makeMainViewControllerFactory() -> MainViewController

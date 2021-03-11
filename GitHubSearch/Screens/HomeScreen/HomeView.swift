@@ -101,15 +101,19 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "hello")
-        cell?.textLabel?.text = viewModel.gitRepositoryResults[indexPath.row].name
-        cell?.detailTextLabel?.text = viewModel.gitRepositoryResults[indexPath.row].description
-        return cell!
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "hello") else {
+            return UITableViewCell()
+        }
+        cell.textLabel?.text = viewModel.gitRepositoryResults[indexPath.row].name
+        cell.detailTextLabel?.text = viewModel.gitRepositoryResults[indexPath.row].description
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedItemURL = viewModel.gitRepositoryResults[indexPath.row].url
-        viewModel.selectedRepository.send(selectedItemURL!)
+        guard let selectedItemURL = viewModel.gitRepositoryResults[indexPath.row].url else {
+            return
+        }
+        viewModel.selectedRepository.send(selectedItemURL)
     }
 }
 
