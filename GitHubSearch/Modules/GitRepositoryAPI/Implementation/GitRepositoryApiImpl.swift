@@ -15,7 +15,7 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
     func getRepositorySearchResult(for text: String) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
         Future { [weak self] promise in
             guard let self = self else { return }
-            let baseURL = "https://api.github.com/search/repositories?q=language:Swift+language:RXSwift&sort=stars&order=desc"
+            let baseURL = "https://api.github.com/search/repositories?q=\(text)&sort=stars&order=desc"
             guard let url = URL(string: baseURL) else {
                 promise(.failure(GitRepositoryAPIError.wrongURL))
                 return

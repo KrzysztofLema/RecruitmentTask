@@ -35,6 +35,7 @@ class HomeView: UIView {
     
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.delegate = self
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
@@ -109,5 +110,15 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItemURL = viewModel.gitRepositoryResults[indexPath.row].url
         viewModel.selectedRepository.send(selectedItemURL!)
+    }
+}
+
+extension HomeView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBar
+            .publisher(for: \.text)
+            .map { $0 ?? "" }
+            .assign(to: \.searchInput , on: viewModel)
+            .store(in: &subscriptions)
     }
 }
