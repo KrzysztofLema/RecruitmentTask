@@ -101,7 +101,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hello")
-        cell?.textLabel?.text = viewModel.gitRepositoryResult?.items?[indexPath.row].name ?? ""
+        cell?.textLabel?.text = viewModel.gitRepositoryResult?.items![indexPath.row].name
         return cell!
     }
     

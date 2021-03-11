@@ -26,11 +26,13 @@ extension Resources {
         var id: Int?
         var name: String?
         var url: URL?
-        var avatarURL: URL?
+        var description: String?
 
         enum CodingKeys: String, CodingKey {
             case url = "html_url"
-            case avatarURL = "avatar_url"
+            case id = "id"
+            case name = "name"
+            case description = "description"
         }
     }
 }
@@ -40,7 +42,6 @@ extension Domain.GitRepository {
         id = resources.id
         name = resources.name
         url = resources.url
-        avatarURL = resources.avatarURL
     }
 }
 
