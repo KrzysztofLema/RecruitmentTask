@@ -55,7 +55,7 @@ class HomeView: UIView {
 private extension HomeView {
     func bind() {
         viewModel
-            .$gitRepositoryResult
+            .$gitRepositoryResults
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.resultsTableView.reloadData()
@@ -96,17 +96,17 @@ private extension HomeView {
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        viewModel.gitRepositoryResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hello")
-        cell?.textLabel?.text = viewModel.gitRepositoryResult?.items![indexPath.row].name
+        cell?.textLabel?.text = viewModel.gitRepositoryResults[indexPath.row].name
+        cell?.detailTextLabel?.text = viewModel.gitRepositoryResults[indexPath.row].description
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedItem = viewModel.gitRepositoryResult?.items?[indexPath.row]
-        print("\(selectedItem!.name!)")
+        let selectedItem = viewModel.gitRepositoryResults[indexPath.row].url
     }
 }

@@ -43,9 +43,7 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
                 
                 do {
                     let jsonDecoder = JSONDecoder()
-                    
                     let decodedData = try jsonDecoder.decode(Resources.GitResponse.self, from: data)
-                    debugSuccess(decodedData)
                     promise(.success(decodedData))
                 } catch {
                     debugError(error)

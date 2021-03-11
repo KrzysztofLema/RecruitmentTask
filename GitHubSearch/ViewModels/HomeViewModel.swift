@@ -10,7 +10,7 @@ import Combine
 class HomeViewModel {
     
     @Published var searchInput: String = ""
-    @Published private(set) var gitRepositoryResult: Resources.GitResponse?
+    @Published private(set) var gitRepositoryResults: [Resources.GitRepository] = []
     
     init(gitRepositoryApi: GitRepositoryAPI) {
         self.gitRepositoryApi = gitRepositoryApi
@@ -35,7 +35,8 @@ private extension HomeViewModel {
             .sink { error in
                 print(error)
             } receiveValue: { searchResult in
-                self.gitRepositoryResult = searchResult
+                guard let searchResult = searchResult.items else { return }
+                self.gitRepositoryResults = searchResult
             }.store(in: &subscriptions)
     }
 }

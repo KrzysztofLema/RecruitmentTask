@@ -45,5 +45,4 @@ extension Domain.GitRepository {
     }
 }
 
-extension Domain.GitResponse {
-}
+extension Domain.GitResponse {}
