@@ -20,7 +20,9 @@ class HomeViewModel {
     }
     
     func bind() {
-        $searchInput.sink { [weak self] searchValue in
+        $searchInput
+            .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
+            .sink { [weak self] searchValue in
             guard let self = self else { return }
             self.searchForGitRepositories(with: searchValue)
         }.store(in: &subscriptions)
