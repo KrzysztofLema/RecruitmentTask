@@ -12,11 +12,19 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
     
     let urlSession = URLSession(configuration: URLSessionConfiguration.default)
     
-    func getRepositorySearchResult(for text: String) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
+    func getRepositorySearchResult(for text: String, sortedBy sorting: Sorting? = .numberOfStars) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
         Future { [weak self] promise in
             guard let self = self else { return }
-            let baseURL = "https://api.github.com/search/repositories?q=\(text)&sort=stars&order=desc"
-            guard let url = URL(string: baseURL) else {
+            var components = URLComponents()
+            components.scheme = "https"
+            components.host = "api.github.com"
+            components.path = "/search/repositories"
+            components.queryItems = [
+                URLQueryItem(name: "q", value: text),
+                URLQueryItem(name: "sort", value: sorting?.rawValue)
+            ]
+            
+            guard let url = components.url else {
                 promise(.failure(GitRepositoryAPIError.wrongURL))
                 return
             }

@@ -35,7 +35,7 @@ class HomeViewModel {
 private extension HomeViewModel {
     func searchForGitRepositories(with searchInput: String) {
         gitRepositoryApi
-            .getRepositorySearchResult(for: searchInput)
+            .getRepositorySearchResult(for: searchInput, sortedBy: .numberOfStars)
             .sink { error in
                 print(error)
             } receiveValue: { searchResult in
