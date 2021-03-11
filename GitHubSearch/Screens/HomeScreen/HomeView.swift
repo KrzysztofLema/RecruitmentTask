@@ -54,7 +54,6 @@ class HomeView: UIView {
 
 private extension HomeView {
     func bind() {
-        
         viewModel
             .$gitRepositoryResults
             .receive(on: DispatchQueue.main)
@@ -104,5 +103,10 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hello")
         cell?.textLabel?.text = viewModel.gitRepositoryResults[indexPath.row].name
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = viewModel.gitRepositoryResults[indexPath.row]
+        print("\(selectedItem.name!)")
     }
 }
