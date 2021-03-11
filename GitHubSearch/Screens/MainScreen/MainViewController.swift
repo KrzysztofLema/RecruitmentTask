@@ -43,13 +43,14 @@ class MainViewController: UIViewController {
 }
 
 private extension MainViewController {
-
+    
     func presentSplashScreen() {
         addFullScreen(splashScreenViewController)
     }
     
     func presentHomeView() {
-        homeViewController.modalPresentationStyle = .fullScreen
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        navigationController.modalPresentationStyle = .fullScreen
         present(homeViewController, animated: true) { [weak self] in
             guard let self = self else { return }
             self.remove(self.splashScreenViewController)
@@ -57,7 +58,8 @@ private extension MainViewController {
     }
     
     func subscribe(to publisher: AnyPublisher<ViewToPresent, Never>) {
-        publisher.receive(on: DispatchQueue.main)
+        publisher
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] viewToPresent in
                 guard let self = self else { return }
                 self.present(viewToPresent)
@@ -95,6 +97,5 @@ extension MainViewController {
         child.willMove(toParent: nil)
         child.view.removeFromSuperview()
         child.removeFromParent()
-        
     }
 }

@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class HomeViewController: UIViewController {
+import Combine
+class HomeViewController: UINavigationController {
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -20,11 +20,21 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bind()
     }
     
     override func loadView() {
         view = HomeView(viewModel: viewModel)
     }
     
-    private var viewModel: HomeViewModel
+    private let viewModel: HomeViewModel
+    private var subscription = Set<AnyCancellable>()
+}
+
+private extension HomeViewController {
+    func bind() {
+        viewModel.selectedRepository.sink { _ in
+            self.presentingViewController?.navigationController?.pushViewController(WebScreenViewController(), animated: true)
+        }.store(in: &subscription)
+    }
 }
