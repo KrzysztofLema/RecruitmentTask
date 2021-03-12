@@ -14,14 +14,6 @@ protocol GitRepositoryAPI {
     ) -> AnyPublisher<GitResponse, GitRepositoryAPIError>
 }
 
-enum GitRepositoryAPIError: Error {
-    case unknown
-    case wrongURL
-    case decoding
-    case notHTTPResponse
-    case badHTTPResponse(statusCode: Int)
-}
-
 enum Sorting: String {
     case numberOfStars = "stars"
     case numberOfForks = "forks"

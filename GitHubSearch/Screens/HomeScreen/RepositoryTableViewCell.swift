@@ -48,12 +48,14 @@ class RepositoryTableViewCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

@@ -66,23 +66,6 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
                     promise(.failure(GitRepositoryAPIError.decoding))
                 }
             }.resume()
-            
         }.eraseToAnyPublisher()
-    }
-}
-extension GitRepositoryAPIError: LocalizedError {
-     var errorDescription: String? {
-        switch self {
-        case .unknown:
-            return NSLocalizedString("UnknownError", comment: "")
-        case .wrongURL:
-            return NSLocalizedString("WrongURLError", comment: "")
-        case .decoding:
-            return NSLocalizedString("DecodingError", comment: "")
-        case .notHTTPResponse:
-            return NSLocalizedString("HTTPResponseError", comment: "")
-        case .badHTTPResponse:
-            return NSLocalizedString("BadHTTP", comment: "")
-        }
     }
 }

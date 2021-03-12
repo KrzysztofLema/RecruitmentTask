@@ -46,6 +46,7 @@ class HomeView: UIView {
         tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: "hello")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
