@@ -11,6 +11,7 @@ class HomeViewModel {
     
     @Published var searchInput: String = ""
     @Published private(set) var gitRepositoryResults: [Resources.GitRepository] = []
+    @Published var homeViewState: HomeViewState = .defaultState
     
     let selectedRepository = PassthroughSubject<Resources.GitRepository, Never>()
     let apiError = PassthroughSubject<GitRepositoryAPIError, Never>()
@@ -27,18 +28,27 @@ class HomeViewModel {
             .filter { !$0.isEmpty }
             .sink { [weak self] searchValue in
             guard let self = self else { return }
+            self.homeViewState = .isLoadingData
             self.searchForGitRepositories(with: searchValue)
         }.store(in: &subscriptions)
         
         $searchInput
             .filter { $0.isEmpty }
-            .sink { _ in self.gitRepositoryResults = [] }
+            .sink { _ in
+                self.homeViewState = .defaultState
+                self.gitRepositoryResults = []
+            }
             .store(in: &subscriptions)
-        
     }
     
     private let gitRepositoryApi: GitRepositoryAPI
     private var subscriptions = Set<AnyCancellable>()
+    
+    enum HomeViewState {
+        case isLoadingData
+        case loadedData
+        case defaultState
+    }
 }
 
 private extension HomeViewModel {
@@ -51,6 +61,7 @@ private extension HomeViewModel {
                 }
             } receiveValue: { searchResult in
                 guard let searchResult = searchResult.items else { return }
+                self.homeViewState = .loadedData
                 self.gitRepositoryResults = searchResult
             }.store(in: &subscriptions)
     }
