@@ -7,10 +7,6 @@
 
 import Foundation
 
-public enum Resources {}
-
-extension Resources {
-    
   public struct GitResponse: Codable, Equatable {
         var items: [GitRepository]?
     }
@@ -39,4 +35,3 @@ extension Resources {
             case avatar = "avatar_url"
         }
     }
-}

@@ -11,9 +11,9 @@ import Combine
 
 class MockTestGitRepositoryApi: GitRepositoryAPI {
     
-    var futureResult: Future<Resources.GitResponse, GitRepositoryAPIError>!
+    var futureResult: Future<GitResponse, GitRepositoryAPIError>!
     
-    func getRepositorySearchResult(for text: String, sortedBy sorting: Sorting?) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
+    func getRepositorySearchResult(for text: String, sortedBy sorting: Sorting?) -> AnyPublisher<GitResponse, GitRepositoryAPIError> {
         futureResult.eraseToAnyPublisher()
     }
 }

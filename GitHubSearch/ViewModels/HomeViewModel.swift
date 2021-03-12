@@ -10,10 +10,10 @@ import Combine
 class HomeViewModel {
     
     @Published var searchInput: String = ""
-    @Published private(set) var gitRepositoryResults: [Resources.GitRepository] = []
+    @Published private(set) var gitRepositoryResults: [GitRepository] = []
     @Published var homeViewState: HomeViewState = .defaultState
     
-    let selectedRepository = PassthroughSubject<Resources.GitRepository, Never>()
+    let selectedRepository = PassthroughSubject<GitRepository, Never>()
     let apiError = PassthroughSubject<GitRepositoryAPIError, Never>()
     var webScreenViewController: WebScreenViewController?
     

@@ -11,15 +11,7 @@ protocol GitRepositoryAPI {
     func getRepositorySearchResult(
         for text: String,
         sortedBy sorting: Sorting?
-    ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError>
-}
-
-enum GitRepositoryAPIError: Error {
-    case unknown
-    case wrongURL
-    case decoding
-    case notHTTPResponse
-    case badHTTPResponse(statusCode: Int)
+    ) -> AnyPublisher<GitResponse, GitRepositoryAPIError>
 }
 
 enum Sorting: String {

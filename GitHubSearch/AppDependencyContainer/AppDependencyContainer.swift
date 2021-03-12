@@ -38,8 +38,8 @@ protocol MainViewFactory {
 }
 
 protocol WebViewFactory {
-    func makeWebViewController(gitRepository: Resources.GitRepository) -> WebScreenViewController
-    func makeWebScreenViewModel(gitRepository: Resources.GitRepository) -> WebScreenViewModel
+    func makeWebViewController(gitRepository: GitRepository) -> WebScreenViewController
+    func makeWebScreenViewModel(gitRepository: GitRepository) -> WebScreenViewModel
 }
 
 protocol GitRepositoryAPIFactory {
@@ -67,11 +67,11 @@ extension AppDependencyContainer: MainViewFactory {
 }
 
 extension AppDependencyContainer: WebViewFactory {
-    func makeWebViewController(gitRepository: Resources.GitRepository) -> WebScreenViewController {
+    func makeWebViewController(gitRepository: GitRepository) -> WebScreenViewController {
         return WebScreenViewController(viewModel: makeWebScreenViewModel(gitRepository: gitRepository))
     }
     
-    func makeWebScreenViewModel(gitRepository: Resources.GitRepository) -> WebScreenViewModel {
+    func makeWebScreenViewModel(gitRepository: GitRepository) -> WebScreenViewModel {
         return WebScreenViewModel(gitRepository: gitRepository)
     }
 }
