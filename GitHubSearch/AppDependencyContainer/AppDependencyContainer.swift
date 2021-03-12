@@ -78,6 +78,8 @@ extension AppDependencyContainer: WebViewFactory {
 
 extension AppDependencyContainer: GitRepositoryAPIFactory {
     func makeGitRepositoryAPI() -> GitRepositoryAPI {
-        return GitRepositoryApiImpl()
+        let sessionConfiguration = URLSessionConfiguration.default
+        let urlSession = URLSession(configuration: sessionConfiguration)
+        return GitRepositoryApiImpl(urlSession: urlSession)
     }
 }
