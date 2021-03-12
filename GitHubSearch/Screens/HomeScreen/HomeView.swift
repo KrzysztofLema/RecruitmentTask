@@ -141,6 +141,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = viewModel.gitRepositoryResults[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         viewModel.selectedRepository.send(selectedItem)
     }
 }
