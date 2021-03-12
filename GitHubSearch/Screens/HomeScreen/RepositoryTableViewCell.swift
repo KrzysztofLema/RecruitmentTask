@@ -21,6 +21,7 @@ class RepositoryTableViewCell: UITableViewCell {
     func configure(with gitRepository: Resources.GitRepository) {
         titleLabel.text = gitRepository.name
         descriptionLabel.text = gitRepository.description
+        debugInfo(gitRepository.owner.avatar)
     }
     
     override func didMoveToWindow() {

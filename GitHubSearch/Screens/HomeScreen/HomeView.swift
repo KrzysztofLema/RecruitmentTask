@@ -130,7 +130,8 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "hello") as? RepositoryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "hello")
+                as? RepositoryTableViewCell else {
             return UITableViewCell()
         }
         cell.configure(with: viewModel.gitRepositoryResults[indexPath.row])

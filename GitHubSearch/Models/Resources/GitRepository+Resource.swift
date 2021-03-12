@@ -20,12 +20,23 @@ extension Resources {
         var name: String?
         var url: URL?
         var description: String?
+        var owner: Owner
 
         enum CodingKeys: String, CodingKey {
             case url = "html_url"
             case id = "id"
             case name = "name"
             case description = "description"
+            case owner = "owner"
+        }
+    }
+    
+    struct Owner: Codable {
+        
+        var avatar: URL?
+        
+        enum CodingKeys: String, CodingKey {
+            case avatar = "avatar_url"
         }
     }
 }
