@@ -50,17 +50,36 @@ class HomeView: UIView {
         return tableView
     }()
     
+    private lazy var loadingIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
+    
     private let viewModel: HomeViewModel
     private var subscriptions = Set<AnyCancellable>()
 }
 
 private extension HomeView {
     func bind() {
-        viewModel
-            .$gitRepositoryResults
+        viewModel.$gitRepositoryResults
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.resultsTableView.reloadData()
+            }.store(in: &subscriptions)
+        
+        viewModel.$homeViewState
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] viewState in
+                switch viewState {
+                case .defaultState:
+                    self?.loadingIndicator.stopAnimating()
+                case .isLoadingData:
+                    self?.loadingIndicator.startAnimating()
+                case .loadedData:
+                    self?.loadingIndicator.stopAnimating()
+                }
             }.store(in: &subscriptions)
     }
 }
@@ -70,11 +89,13 @@ private extension HomeView {
     func constructHierarchy() {
         addSubview(searchBar)
         addSubview(resultsTableView)
+        resultsTableView.addSubview(loadingIndicator)
     }
     
     func activateConstraints() {
         activateSearchBarConstraints()
         activateResultsTableViewConstraints()
+        activateLoadingIndicatorConstraints()
     }
     
     func activateSearchBarConstraints() {
@@ -91,6 +112,13 @@ private extension HomeView {
             resultsTableView.leftAnchor.constraint(equalTo: leftAnchor),
             resultsTableView.rightAnchor.constraint(equalTo: rightAnchor),
             resultsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    func activateLoadingIndicatorConstraints() {
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: resultsTableView.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: resultsTableView.centerYAnchor)
         ])
     }
 }
