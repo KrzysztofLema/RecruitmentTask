@@ -74,7 +74,7 @@ class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(expectedValue, receivedValue)
     }
     
-    func test_when_then() {
+    func test_whenMockGitRepositoryGetSuccessAndGotSearchInput_thenExpectationOfHomeViewStateShouldBe() {
         let expectation = XCTestExpectation(description: "")
         let expectedValue: [HomeViewState] = [.defaultState, .isLoadingData, .loadedData]
         var receivedValue: [HomeViewState] = []
