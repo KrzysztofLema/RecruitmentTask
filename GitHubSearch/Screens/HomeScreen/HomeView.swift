@@ -36,7 +36,7 @@ class HomeView: UIView {
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.delegate = self
-        searchBar.placeholder = "Search for git repository"
+        searchBar.placeholder = NSLocalizedString("Search", comment: "")
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()

@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  GitHubSearch
+
+  Created by Krzysztof Lema on 12/03/2021.
+  
+*/
+
+"OK" = "OK";
+"GitSearch" = "Wyszukiwarka Git";
+"UnknownError" = "Nieznany błąd";
+"WrongURLError" = "Zły adres URL";
+"DecodingError" = "Błąd dekodowania";
+"HTTPResponseError" = "Błąd HTTP";
+"BadHTTP" = "Błąd odpowiedzi HTTP";
+"Search" = "Wyszukaj repozytorium Git";
