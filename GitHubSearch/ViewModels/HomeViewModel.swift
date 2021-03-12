@@ -11,7 +11,9 @@ class HomeViewModel {
     
     @Published var searchInput: String = ""
     @Published private(set) var gitRepositoryResults: [Resources.GitRepository] = []
+    
     let selectedRepository = PassthroughSubject<Resources.GitRepository, Never>()
+    let apiError = PassthroughSubject<GitRepositoryAPIError, Never>()
     var webScreenViewController: WebScreenViewController?
     
     init(gitRepositoryApi: GitRepositoryAPI) {
@@ -28,8 +30,11 @@ class HomeViewModel {
             self.searchForGitRepositories(with: searchValue)
         }.store(in: &subscriptions)
         
-       
-            
+        $searchInput
+            .filter { $0.isEmpty }
+            .sink { _ in self.gitRepositoryResults = [] }
+            .store(in: &subscriptions)
+        
     }
     
     private let gitRepositoryApi: GitRepositoryAPI
@@ -41,7 +46,9 @@ private extension HomeViewModel {
         gitRepositoryApi
             .getRepositorySearchResult(for: searchInput, sortedBy: .numberOfStars)
             .sink { error in
-                print(error)
+                if case .failure(let error) = error {
+                    self.apiError.send(error)
+                }
             } receiveValue: { searchResult in
                 guard let searchResult = searchResult.items else { return }
                 self.gitRepositoryResults = searchResult
