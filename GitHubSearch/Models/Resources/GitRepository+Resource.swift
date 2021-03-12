@@ -7,15 +7,15 @@
 
 import Foundation
 
-enum Resources {}
+public enum Resources {}
 
 extension Resources {
     
-    struct GitResponse: Codable {
+  public struct GitResponse: Codable, Equatable {
         var items: [GitRepository]?
     }
     
-    struct GitRepository: Codable {
+    struct GitRepository: Codable, Equatable {
         var id: Int?
         var name: String?
         var url: URL?
@@ -31,7 +31,7 @@ extension Resources {
         }
     }
     
-    struct Owner: Codable {
+    struct Owner: Codable, Equatable {
         
         var avatar: URL?
         

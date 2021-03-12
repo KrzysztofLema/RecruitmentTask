@@ -43,12 +43,6 @@ class HomeViewModel {
     
     private let gitRepositoryApi: GitRepositoryAPI
     private var subscriptions = Set<AnyCancellable>()
-    
-    enum HomeViewState {
-        case isLoadingData
-        case loadedData
-        case defaultState
-    }
 }
 
 private extension HomeViewModel {
@@ -65,4 +59,10 @@ private extension HomeViewModel {
                 self.gitRepositoryResults = searchResult
             }.store(in: &subscriptions)
     }
+}
+
+enum HomeViewState {
+    case isLoadingData
+    case loadedData
+    case defaultState
 }

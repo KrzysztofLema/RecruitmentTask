@@ -10,7 +10,11 @@ import Combine
 
 class GitRepositoryApiImpl: GitRepositoryAPI {
     
-    let urlSession = URLSession(configuration: URLSessionConfiguration.default)
+    let urlSession: URLSession
+    
+    init(urlSession: URLSession) {
+        self.urlSession = urlSession
+    }
     
     func getRepositorySearchResult(
         for text: String,
@@ -67,7 +71,7 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
     }
 }
 extension GitRepositoryAPIError: LocalizedError {
-    var errorDescription: String? {
+     var errorDescription: String? {
         switch self {
         case .unknown:
             return "Unknown Error"

@@ -17,7 +17,7 @@ class MockGitRepository: GitRepositoryAPI {
         sortedBy sorting: Sorting? = .numberOfStars
     ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
         Future { promise in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 let repositories: Resources.GitResponse =
                     Resources.GitResponse(items: [
                         Resources.GitRepository(
