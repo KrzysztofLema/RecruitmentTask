@@ -31,14 +31,15 @@ class SplashScreenView: UIView {
     
     private lazy var appNameTextLabel: UILabel = {
         let label = UILabel()
-        label.text = "GIT HUB"
+        label.text = "Git Hub Search"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var appImageView: UIImageView = {
-        let image = UIImage(systemName: "network")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let image = UIImage(named: "github-logo")
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
