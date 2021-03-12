@@ -43,7 +43,7 @@ class HomeView: UIView {
     
     private lazy var resultsTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "hello")
+        tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: "hello")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -130,11 +130,10 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "hello") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "hello") as? RepositoryTableViewCell else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = viewModel.gitRepositoryResults[indexPath.row].name
-        cell.detailTextLabel?.text = viewModel.gitRepositoryResults[indexPath.row].description
+        cell.configure(with: viewModel.gitRepositoryResults[indexPath.row])
         return cell
     }
     
