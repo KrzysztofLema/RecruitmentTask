@@ -48,14 +48,12 @@ class RepositoryTableViewCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello World"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Description"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

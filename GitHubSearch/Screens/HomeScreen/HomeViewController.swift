@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Git Search"
+        self.navigationItem.title = NSLocalizedString("GitSearch", comment: "")
         bind()
     }
     
@@ -56,7 +56,7 @@ private extension HomeViewController {
             title: error.localizedDescription,
             message: nil,
             preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default)
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true, completion: nil)
     }

@@ -74,15 +74,15 @@ extension GitRepositoryAPIError: LocalizedError {
      var errorDescription: String? {
         switch self {
         case .unknown:
-            return "Unknown Error"
+            return NSLocalizedString("UnknownError", comment: "")
         case .wrongURL:
-            return "Wrong URL Error"
+            return NSLocalizedString("WrongURLError", comment: "")
         case .decoding:
-            return "Decoding Error"
+            return NSLocalizedString("DecodingError", comment: "")
         case .notHTTPResponse:
-            return "HTTP ResponseError"
+            return NSLocalizedString("HTTPResponseError", comment: "")
         case .badHTTPResponse(statusCode: let statusCode):
-            return "Bad HTTP Response with status code: \(statusCode)"
+            return NSLocalizedString("BadHTTP", comment: "")
         }
     }
 }
