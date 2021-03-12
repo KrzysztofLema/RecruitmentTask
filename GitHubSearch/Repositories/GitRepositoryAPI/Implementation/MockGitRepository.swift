@@ -20,9 +20,15 @@ class MockGitRepository: GitRepositoryAPI {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 let repositories: Resources.GitResponse =
                     Resources.GitResponse(items: [
-                        Resources.GitRepository(id: 0, name: "Krzysztof", url: URL(string: "www.google.pl")),
-                        Resources.GitRepository(id: 0, name: "Krzysztof", url: URL(string: "www.google.pl")),
-                        Resources.GitRepository(id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"))
+                        Resources.GitRepository(
+                            id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
+                            owner: Resources.Owner(avatar: URL(string: ""))),
+                        Resources.GitRepository(
+                            id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
+                            owner: Resources.Owner(avatar: URL(string: ""))),
+                        Resources.GitRepository(
+                            id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
+                            owner: Resources.Owner(avatar: URL(string: "")))
                     ])
                 
                 promise(.success(repositories))}
