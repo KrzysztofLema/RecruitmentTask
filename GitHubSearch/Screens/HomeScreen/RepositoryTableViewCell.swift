@@ -36,7 +36,6 @@ class RepositoryTableViewCell: UITableViewCell {
         backgroundColor = .white
         constructHierarchy()
         activateConstraints()
-        bind()
         hierarchyNotReady = false
     }
     
@@ -62,9 +61,6 @@ class RepositoryTableViewCell: UITableViewCell {
 }
 
 private extension RepositoryTableViewCell {
-    func bind() {
-    
-    }
     
     func constructHierarchy() {
         addSubview(avatarImageView)
