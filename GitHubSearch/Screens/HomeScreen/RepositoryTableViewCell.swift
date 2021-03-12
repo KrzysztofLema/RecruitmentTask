@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 class RepositoryTableViewCell: UITableViewCell {
     
     var hierarchyNotReady = true
@@ -21,7 +22,10 @@ class RepositoryTableViewCell: UITableViewCell {
     func configure(with gitRepository: Resources.GitRepository) {
         titleLabel.text = gitRepository.name
         descriptionLabel.text = gitRepository.description
-        debugInfo(gitRepository.owner.avatar)
+        let url = gitRepository.owner.avatar
+        imageView?.kf.setImage(with: url, placeholder: nil, options: nil, completionHandler: { _ in
+            self.setNeedsLayout()
+        })
     }
     
     override func didMoveToWindow() {
@@ -38,7 +42,6 @@ class RepositoryTableViewCell: UITableViewCell {
     
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
