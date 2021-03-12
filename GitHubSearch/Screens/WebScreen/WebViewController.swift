@@ -19,6 +19,11 @@ class WebScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = viewModel.gitRepository?.name
+    }
+    
     override func loadView() {
         view = WebScreenView(viewModel: viewModel)
     }
