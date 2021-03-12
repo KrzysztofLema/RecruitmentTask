@@ -19,7 +19,7 @@ class RepositoryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with gitRepository: Resources.GitRepository) {
+    func configure(with gitRepository: GitRepository) {
         titleLabel.text = gitRepository.name
         descriptionLabel.text = gitRepository.description
         let url = gitRepository.owner.avatar

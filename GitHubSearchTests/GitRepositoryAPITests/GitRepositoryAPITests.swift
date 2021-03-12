@@ -31,18 +31,18 @@ class GitRepositoryAPITests: XCTestCase {
     
     func test_whenTheStatusCodeIs200_AfterSendRequest_ShouldReceiveData() {
         let expectation = XCTestExpectation(description: "resume() triggered")
-        MockURLProtocol.testData = try? JSONEncoder().encode(Resources.GitResponse(items: [
-            Resources.GitRepository(
+        MockURLProtocol.testData = try? JSONEncoder().encode(GitResponse(items: [
+            GitRepository(
                 id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
-                owner: Resources.Owner(avatar: URL(string: "")))
+                owner: Owner(avatar: URL(string: "")))
         ]))
         MockURLProtocol.statusCode = 200
-        let expectedValue =  Resources.GitResponse(items: [
-            Resources.GitRepository(
+        let expectedValue =  GitResponse(items: [
+            GitRepository(
                 id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
-                owner: Resources.Owner(avatar: URL(string: "")))
+                owner: Owner(avatar: URL(string: "")))
         ])
-        var receivedValue: Resources.GitResponse?
+        var receivedValue: GitResponse?
         
         sut.getRepositorySearchResult(for: "asd")
             .sink { _ in } receiveValue: { received in

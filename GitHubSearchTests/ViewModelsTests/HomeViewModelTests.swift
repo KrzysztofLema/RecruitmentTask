@@ -80,16 +80,16 @@ class HomeViewModelTests: XCTestCase {
         var receivedValue: [HomeViewState] = []
         
         mockGitRepositoryApi.futureResult = Future { promise in
-            promise(.success(Resources.GitResponse(items: [
-                Resources.GitRepository(
+            promise(.success(GitResponse(items: [
+                GitRepository(
                     id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
-                    owner: Resources.Owner(avatar: URL(string: ""))),
-                Resources.GitRepository(
+                    owner: Owner(avatar: URL(string: ""))),
+                GitRepository(
                     id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
-                    owner: Resources.Owner(avatar: URL(string: ""))),
-                Resources.GitRepository(
+                    owner: Owner(avatar: URL(string: ""))),
+                GitRepository(
                     id: 0, name: "Krzysztof", url: URL(string: "www.google.pl"),
-                    owner: Resources.Owner(avatar: URL(string: "")))
+                    owner: Owner(avatar: URL(string: "")))
             ])))
             
         }

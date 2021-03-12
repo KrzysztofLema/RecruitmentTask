@@ -9,10 +9,10 @@ import Foundation
 
 class WebScreenViewModel {
     
-    @Published var gitRepository: Resources.GitRepository?
+    @Published var gitRepository: GitRepository?
     @Published var viewState: WebViewState = .isLoading
     
-    init(gitRepository: Resources.GitRepository) {
+    init(gitRepository: GitRepository) {
         self.gitRepository = gitRepository
         
     }

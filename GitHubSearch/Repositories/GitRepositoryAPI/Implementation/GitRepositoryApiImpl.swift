@@ -19,7 +19,7 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
     func getRepositorySearchResult(
         for text: String,
         sortedBy sorting: Sorting? = .numberOfStars
-    ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError> {
+    ) -> AnyPublisher<GitResponse, GitRepositoryAPIError> {
         Future { [weak self] promise in
             guard let self = self else { return }
             var components = URLComponents()
@@ -59,7 +59,7 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
                 
                 do {
                     let jsonDecoder = JSONDecoder()
-                    let decodedData = try jsonDecoder.decode(Resources.GitResponse.self, from: data)
+                    let decodedData = try jsonDecoder.decode(GitResponse.self, from: data)
                     promise(.success(decodedData))
                 } catch {
                     debugError(error)
@@ -81,7 +81,7 @@ extension GitRepositoryAPIError: LocalizedError {
             return NSLocalizedString("DecodingError", comment: "")
         case .notHTTPResponse:
             return NSLocalizedString("HTTPResponseError", comment: "")
-        case .badHTTPResponse(statusCode: let statusCode):
+        case .badHTTPResponse:
             return NSLocalizedString("BadHTTP", comment: "")
         }
     }

@@ -11,7 +11,7 @@ protocol GitRepositoryAPI {
     func getRepositorySearchResult(
         for text: String,
         sortedBy sorting: Sorting?
-    ) -> AnyPublisher<Resources.GitResponse, GitRepositoryAPIError>
+    ) -> AnyPublisher<GitResponse, GitRepositoryAPIError>
 }
 
 enum GitRepositoryAPIError: Error {
