@@ -35,10 +35,28 @@ class HomeViewController: UIViewController {
 
 private extension HomeViewController {
     func bind() {
-        viewModel.selectedRepository.sink { [weak self] gitRepository in
-            guard let self = self else { return }
-            let webViewController = self.viewFactories.makeWebViewController(gitRepository: gitRepository)
-            self.navigationController?.pushViewController(webViewController, animated: true)
-        }.store(in: &subscription)
+        viewModel.selectedRepository
+            .sink { [weak self] gitRepository in
+                guard let self = self else { return }
+                let webViewController = self.viewFactories.makeWebViewController(gitRepository: gitRepository)
+                self.navigationController?.pushViewController(webViewController, animated: true)
+            }.store(in: &subscription)
+        
+        viewModel.apiError
+            .receive(on: DispatchQueue.main)
+            .sink { error in
+                self.presentAlert(with: error)
+            }.store(in: &subscription)
+    }
+}
+private extension HomeViewController {
+    func presentAlert(with error: GitRepositoryAPIError) {
+        let errorAlert = UIAlertController(
+            title: error.localizedDescription,
+            message: nil,
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        errorAlert.addAction(okAction)
+        present(errorAlert, animated: true, completion: nil)
     }
 }

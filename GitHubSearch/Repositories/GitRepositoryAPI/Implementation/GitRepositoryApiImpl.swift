@@ -66,3 +66,19 @@ class GitRepositoryApiImpl: GitRepositoryAPI {
         }.eraseToAnyPublisher()
     }
 }
+extension GitRepositoryAPIError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .unknown:
+            return "Unknown Error"
+        case .wrongURL:
+            return "Wrong URL Error"
+        case .decoding:
+            return "Decoding Error"
+        case .notHTTPResponse:
+            return "HTTP ResponseError"
+        case .badHTTPResponse(statusCode: let statusCode):
+            return "Bad HTTP Response with status code: \(statusCode)"
+        }
+    }
+}
