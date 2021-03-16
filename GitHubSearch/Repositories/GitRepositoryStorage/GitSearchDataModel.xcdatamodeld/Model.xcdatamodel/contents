@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="GitRepositoryEntity" representedClassName="GitRepositoryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionOfRepo" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GitRepositoryOwnerEntity"/>
+    </entity>
+    <entity name="GitRepositoryOwnerEntity" representedClassName="GitRepositoryOwnerEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="URI"/>
+    </entity>
+    <entity name="GitResponseEntity" representedClassName="GitResponseEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="repository" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GitRepositoryEntity"/>
+    </entity>
+    <elements>
+        <element name="GitResponseEntity" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="GitRepositoryEntity" positionX="-54" positionY="-9" width="128" height="104"/>
+        <element name="GitRepositoryOwnerEntity" positionX="-36" positionY="9" width="128" height="44"/>
+    </elements>
 </model>

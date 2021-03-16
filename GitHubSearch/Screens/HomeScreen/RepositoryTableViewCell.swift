@@ -21,7 +21,7 @@ class RepositoryTableViewCell: UITableViewCell {
     
     func configure(with gitRepository: GitRepository) {
         titleLabel.text = gitRepository.name
-        descriptionLabel.text = gitRepository.description
+        descriptionLabel.text = gitRepository.descriptionOfRepo
         let url = gitRepository.owner.avatar
         imageView?.kf.setImage(with: url, placeholder: nil, options: nil, completionHandler: { _ in
             self.setNeedsLayout()

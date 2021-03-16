@@ -15,14 +15,14 @@ import Foundation
         var id: Int?
         var name: String?
         var url: URL?
-        var description: String?
+        var descriptionOfRepo: String?
         var owner: Owner
 
         enum CodingKeys: String, CodingKey {
             case url = "html_url"
             case id = "id"
             case name = "name"
-            case description = "description"
+            case descriptionOfRepo = "description"
             case owner = "owner"
         }
     }
