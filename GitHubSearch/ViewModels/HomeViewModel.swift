@@ -49,12 +49,13 @@ private extension HomeViewModel {
     func searchForGitRepositories(with searchInput: String) {
         gitRepositoryApi
             .getRepositorySearchResult(for: searchInput, sortedBy: .numberOfStars)
-            .sink { error in
+            .sink { [weak self] error in
+                guard let self = self else { return }
                 if case .failure(let error) = error {
                     self.apiError.send(error)
                 }
-            } receiveValue: { searchResult in
-                guard let searchResult = searchResult.items else { return }
+            } receiveValue: { [weak self] searchResult in
+                guard let self = self, let searchResult = searchResult.items else { return }
                 self.homeViewState = .loadedData
                 self.gitRepositoryResults = searchResult
             }.store(in: &subscriptions)
