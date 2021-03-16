@@ -12,7 +12,7 @@ class CoreDataStorage {
     let persistentContainer: NSPersistentContainer
     
     init() {
-        persistentContainer = NSPersistentContainer(name: "GitSearchPersistentContainer")
+        persistentContainer = NSPersistentContainer(name: "GitSearchDataModel")
         persistentContainer.loadPersistentStores { persistentContainer, error in
             if let error = error {
                 fatalError("Core Data store failed to load with \(error)")

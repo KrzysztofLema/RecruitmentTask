@@ -14,7 +14,13 @@ class AppDependencyContainer {
         makeGitRepositoryAPI()
     }()
     
-    init() {}
+    lazy var coreDataStorage: CoreDataStorage = {
+        makeCoreDataStorage()
+    }()
+    
+    init() {
+     _ = makeCoreDataStorage()
+    }
 }
 
 protocol SplashScreenFactory {
@@ -24,12 +30,6 @@ protocol SplashScreenFactory {
 protocol HomeViewFactory {
     func makeHomeViewControllerFactory() -> HomeViewController
     func makeHomeViewModelFactory() -> HomeViewModel
-}
-
-extension AppDependencyContainer: SplashScreenFactory {
-    func makeSplashScreenViewController() -> SplashScreenViewController {
-        return SplashScreenViewController()
-    }
 }
 
 protocol MainViewFactory {
@@ -44,6 +44,10 @@ protocol WebViewFactory {
 
 protocol GitRepositoryAPIFactory {
     func makeGitRepositoryAPI() -> GitRepositoryAPI
+}
+
+protocol CoreDataStorageFactory {
+    func makeCoreDataStorage() -> CoreDataStorage
 }
 
 extension AppDependencyContainer: HomeViewFactory {
@@ -76,10 +80,23 @@ extension AppDependencyContainer: WebViewFactory {
     }
 }
 
+extension AppDependencyContainer: SplashScreenFactory {
+    func makeSplashScreenViewController() -> SplashScreenViewController {
+        return SplashScreenViewController()
+    }
+}
+
+
 extension AppDependencyContainer: GitRepositoryAPIFactory {
     func makeGitRepositoryAPI() -> GitRepositoryAPI {
         let sessionConfiguration = URLSessionConfiguration.default
         let urlSession = URLSession(configuration: sessionConfiguration)
         return GitRepositoryApiImpl(urlSession: urlSession)
+    }
+}
+
+extension AppDependencyContainer: CoreDataStorageFactory {
+    func makeCoreDataStorage() -> CoreDataStorage {
+        CoreDataStorage()
     }
 }

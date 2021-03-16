@@ -15,6 +15,7 @@
 		9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */; };
 		9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */; };
 		9582C6322600A2A600225D75 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9582C6312600A2A600225D75 /* CoreDataStorage.swift */; };
+		9582C63C2600AE3C00225D75 /* GitSearchDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9582C63A2600AE3C00225D75 /* GitSearchDataModel.xcdatamodeld */; };
 		958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */; };
 		958D8D2825FA005600480678 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D2725FA005600480678 /* DebugPrint.swift */; };
 		958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D3C25FA016C00480678 /* Date+Formatting.swift */; };
@@ -62,6 +63,7 @@
 		9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		9582C6312600A2A600225D75 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		9582C63B2600AE3C00225D75 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApiImpl.swift; sourceTree = "<group>"; };
 		958D8D2725FA005600480678 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
 		958D8D3C25FA016C00480678 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				9582C6312600A2A600225D75 /* CoreDataStorage.swift */,
+				9582C63A2600AE3C00225D75 /* GitSearchDataModel.xcdatamodeld */,
 			);
 			path = GitRepositoryStorage;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				9572BC4725F9200100C5C8C5 /* SplashScreenViewController.swift in Sources */,
 				95F82CAD25FBD24A00E570ED /* UIViewController+AddAndRemove.swift in Sources */,
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
+				9582C63C2600AE3C00225D75 /* GitSearchDataModel.xcdatamodeld in Sources */,
 				9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */,
 				958D8D2825FA005600480678 /* DebugPrint.swift in Sources */,
 				9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */,
@@ -767,6 +771,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9582C63A2600AE3C00225D75 /* GitSearchDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9582C63B2600AE3C00225D75 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9582C63B2600AE3C00225D75 /* Model.xcdatamodel */;
+			path = GitSearchDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9572BC3725F9200100C5C8C5 /* Project object */;
 }
