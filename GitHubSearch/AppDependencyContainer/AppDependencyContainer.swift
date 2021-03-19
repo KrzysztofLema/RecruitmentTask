@@ -10,9 +10,6 @@ typealias ViewFactories = HomeViewFactory & SplashScreenFactory & WebViewFactory
 
 class AppDependencyContainer {
     
-    lazy var gitRepositoryAPI: GitRepositoryAPI = {
-        makeGitRepositoryAPI()
-    }()
     
     init() {}
 }
@@ -42,13 +39,9 @@ protocol WebViewFactory {
     func makeWebScreenViewModel(gitRepository: GitRepository) -> WebScreenViewModel
 }
 
-protocol GitRepositoryAPIFactory {
-    func makeGitRepositoryAPI() -> GitRepositoryAPI
-}
-
 extension AppDependencyContainer: HomeViewFactory {
     func makeHomeViewModelFactory() -> HomeViewModel {
-        return HomeViewModel(gitRepositoryApi: gitRepositoryAPI)
+        return HomeViewModel()
     }
     
     func makeHomeViewControllerFactory() -> HomeViewController {
@@ -76,10 +69,6 @@ extension AppDependencyContainer: WebViewFactory {
     }
 }
 
-extension AppDependencyContainer: GitRepositoryAPIFactory {
-    func makeGitRepositoryAPI() -> GitRepositoryAPI {
-        let sessionConfiguration = URLSessionConfiguration.default
-        let urlSession = URLSession(configuration: sessionConfiguration)
-        return GitRepositoryApiImpl(urlSession: urlSession)
-    }
+extension AppDependencyContainer: NetworkApiFactory {
+
 }

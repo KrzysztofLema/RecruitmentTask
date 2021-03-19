@@ -17,8 +17,7 @@ class HomeViewModel {
     let apiError = PassthroughSubject<GitRepositoryAPIError, Never>()
     var webScreenViewController: WebScreenViewController?
     
-    init(gitRepositoryApi: GitRepositoryAPI) {
-        self.gitRepositoryApi = gitRepositoryApi
+    init() {
         bind()
     }
     
@@ -41,24 +40,12 @@ class HomeViewModel {
             .store(in: &subscriptions)
     }
     
-    private let gitRepositoryApi: GitRepositoryAPI
     private var subscriptions = Set<AnyCancellable>()
 }
 
 private extension HomeViewModel {
     func searchForGitRepositories(with searchInput: String) {
-        gitRepositoryApi
-            .getRepositorySearchResult(for: searchInput, sortedBy: .numberOfStars)
-            .sink { [weak self] error in
-                guard let self = self else { return }
-                if case .failure(let error) = error {
-                    self.apiError.send(error)
-                }
-            } receiveValue: { [weak self] searchResult in
-                guard let self = self, let searchResult = searchResult.items else { return }
-                self.homeViewState = .loadedData
-                self.gitRepositoryResults = searchResult
-            }.store(in: &subscriptions)
+        
     }
 }
 
