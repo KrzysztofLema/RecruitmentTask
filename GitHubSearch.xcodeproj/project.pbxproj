@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9532689426050392000720DA /* GitReposiotryDBImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9532689326050392000720DA /* GitReposiotryDBImporter.swift */; };
 		9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC4225F9200100C5C8C5 /* AppDelegate.swift */; };
 		9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC4425F9200100C5C8C5 /* SceneDelegate.swift */; };
 		9572BC4725F9200100C5C8C5 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC4625F9200100C5C8C5 /* SplashScreenViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9532689326050392000720DA /* GitReposiotryDBImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitReposiotryDBImporter.swift; sourceTree = "<group>"; };
 		9572BC3F25F9200100C5C8C5 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9572BC4225F9200100C5C8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9572BC4425F9200100C5C8C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		9532689226050330000720DA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				9532689326050392000720DA /* GitReposiotryDBImporter.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				95F82CAD25FBD24A00E570ED /* UIViewController+AddAndRemove.swift in Sources */,
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
 				9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */,
+				9532689426050392000720DA /* GitReposiotryDBImporter.swift in Sources */,
 				958D8D2825FA005600480678 /* DebugPrint.swift in Sources */,
 				9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */,
 				95CFC07625F96BE8002CE7A7 /* GitRepository.swift in Sources */,

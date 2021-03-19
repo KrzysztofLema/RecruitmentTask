@@ -8,7 +8,7 @@
 import Foundation
 
   public struct GitResponse: Codable, Equatable {
-        var items: [GitRepository]?
+        var items: [GitRepository]
     }
     
     struct GitRepository: Codable, Equatable {
