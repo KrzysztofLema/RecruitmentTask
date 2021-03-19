@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9532689426050392000720DA /* GitReposiotryDBImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9532689326050392000720DA /* GitReposiotryDBImporter.swift */; };
 		9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC4225F9200100C5C8C5 /* AppDelegate.swift */; };
 		9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC4425F9200100C5C8C5 /* SceneDelegate.swift */; };
 		9572BC4725F9200100C5C8C5 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BC4625F9200100C5C8C5 /* SplashScreenViewController.swift */; };
@@ -14,7 +15,7 @@
 		9572BC4F25F9200500C5C8C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9572BC4D25F9200500C5C8C5 /* LaunchScreen.storyboard */; };
 		9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */; };
 		9572BCD125F930EF00C5C8C5 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */; };
-		958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */; };
+		958D8D1A25F9E84F00480678 /* NetworkApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D1925F9E84F00480678 /* NetworkApi.swift */; };
 		958D8D2825FA005600480678 /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D2725FA005600480678 /* DebugPrint.swift */; };
 		958D8D3D25FA016C00480678 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958D8D3C25FA016C00480678 /* Date+Formatting.swift */; };
 		9598A47625FA4422005BEDC8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598A47525FA4422005BEDC8 /* WebViewController.swift */; };
@@ -25,8 +26,6 @@
 		95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC05C25F93F44002CE7A7 /* MainViewController.swift */; };
 		95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC06425F940FC002CE7A7 /* MainViewModel.swift */; };
 		95CFC07625F96BE8002CE7A7 /* GitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC07525F96BE8002CE7A7 /* GitRepository.swift */; };
-		95CFC09B25F97B9D002CE7A7 /* GitRepositoryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC09A25F97B9D002CE7A7 /* GitRepositoryApi.swift */; };
-		95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */; };
 		95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */; };
 		95F3427C25FB72B400FE7888 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3427B25FB72B400FE7888 /* RepositoryTableViewCell.swift */; };
 		95F3428825FB863800FE7888 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 95F3428725FB863800FE7888 /* Kingfisher */; };
@@ -49,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9532689326050392000720DA /* GitReposiotryDBImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitReposiotryDBImporter.swift; sourceTree = "<group>"; };
 		9572BC3F25F9200100C5C8C5 /* GitHubSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9572BC4225F9200100C5C8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9572BC4425F9200100C5C8C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		9572BC5B25F9200600C5C8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9572BCB425F92AB300C5C8C5 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		9572BCD025F930EF00C5C8C5 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
-		958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApiImpl.swift; sourceTree = "<group>"; };
+		958D8D1925F9E84F00480678 /* NetworkApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApi.swift; sourceTree = "<group>"; };
 		958D8D2725FA005600480678 /* DebugPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
 		958D8D3C25FA016C00480678 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		9598A47525FA4422005BEDC8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +71,6 @@
 		95CFC05C25F93F44002CE7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		95CFC06425F940FC002CE7A7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		95CFC07525F96BE8002CE7A7 /* GitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepository.swift; sourceTree = "<group>"; };
-		95CFC09A25F97B9D002CE7A7 /* GitRepositoryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositoryApi.swift; sourceTree = "<group>"; };
-		95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGitRepository.swift; sourceTree = "<group>"; };
 		95CFC0AB25F9800A002CE7A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95F3427B25FB72B400FE7888 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		95F342AF25FB8C4900FE7888 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
@@ -104,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9532689226050330000720DA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9532689326050392000720DA /* GitReposiotryDBImporter.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		9572BC3625F9200100C5C8C5 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +180,7 @@
 		9572BC9D25F9289C00C5C8C5 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9532689226050330000720DA /* CoreData */,
 				95CFC09925F97B74002CE7A7 /* GitRepositoryAPI */,
 			);
 			path = Repositories;
@@ -264,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				95CFC0A225F97CFF002CE7A7 /* Implementation */,
-				95CFC09A25F97B9D002CE7A7 /* GitRepositoryApi.swift */,
 			);
 			path = GitRepositoryAPI;
 			sourceTree = "<group>";
@@ -272,8 +278,7 @@
 		95CFC0A225F97CFF002CE7A7 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				95CFC0A325F97D10002CE7A7 /* MockGitRepository.swift */,
-				958D8D1925F9E84F00480678 /* GitRepositoryApiImpl.swift */,
+				958D8D1925F9E84F00480678 /* NetworkApi.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -449,16 +454,15 @@
 				95F82CAD25FBD24A00E570ED /* UIViewController+AddAndRemove.swift in Sources */,
 				9572BC4325F9200100C5C8C5 /* AppDelegate.swift in Sources */,
 				9572BC4525F9200100C5C8C5 /* SceneDelegate.swift in Sources */,
+				9532689426050392000720DA /* GitReposiotryDBImporter.swift in Sources */,
 				958D8D2825FA005600480678 /* DebugPrint.swift in Sources */,
 				9572BCB525F92AB300C5C8C5 /* SplashScreenView.swift in Sources */,
-				95CFC09B25F97B9D002CE7A7 /* GitRepositoryApi.swift in Sources */,
 				95CFC07625F96BE8002CE7A7 /* GitRepository.swift in Sources */,
 				95CFC0AC25F9800A002CE7A7 /* HomeViewModel.swift in Sources */,
 				9598A47625FA4422005BEDC8 /* WebViewController.swift in Sources */,
 				95CFC05D25F93F44002CE7A7 /* MainViewController.swift in Sources */,
 				9598A47E25FA442F005BEDC8 /* WebScreenView.swift in Sources */,
-				958D8D1A25F9E84F00480678 /* GitRepositoryApiImpl.swift in Sources */,
-				95CFC0A425F97D10002CE7A7 /* MockGitRepository.swift in Sources */,
+				958D8D1A25F9E84F00480678 /* NetworkApi.swift in Sources */,
 				95CFC06525F940FC002CE7A7 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
