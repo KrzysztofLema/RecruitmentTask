@@ -92,6 +92,7 @@ class HomeViewModelTests: XCTestCase {
                     owner: Owner(avatar: URL(string: "")))
             ])))
             
+            
         }
         sut.$searchInput
             .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
