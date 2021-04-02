@@ -28,6 +28,7 @@ excluded:
   - Carthage
   - Pods
   - "GitHubSearchTests/*"
+  - "fastlane/*"
 
 colon:
   apply_to_dictionaries: false
