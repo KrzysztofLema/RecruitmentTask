@@ -107,6 +107,8 @@ class HomeViewModelTests: XCTestCase {
         
         sut.searchInput = "asd"
         
+        
+        
         wait(for: [expectation], timeout: 1.0)
         XCTAssertEqual(expectedValue, receivedValue)
         XCTAssertEqual(sut.gitRepositoryResults.count, 3)
