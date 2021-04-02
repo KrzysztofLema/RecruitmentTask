@@ -1,0 +1,4 @@
+scheme("GitHubSearch")
+clean(true)
+open_report(true)
+devices(["iPhone SE (2nd generation)", "iPhone 11 Pro Max"])
