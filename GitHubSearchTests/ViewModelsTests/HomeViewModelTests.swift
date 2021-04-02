@@ -93,10 +93,6 @@ class HomeViewModelTests: XCTestCase {
             ])))
             
         }
-        
-        
-        
-        
         sut.$searchInput
             .debounce(for: .milliseconds(800), scheduler: RunLoop.main)
             .sink { _ in
