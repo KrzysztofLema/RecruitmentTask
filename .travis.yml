@@ -1,3 +1,9 @@
+before_install:
+  - gem install cocoapods
+install:
+  - brew update && brew upgrade swiftlint
+  - pod install
+  
 osx_image: xcode12.4
 language: swift
 script:
